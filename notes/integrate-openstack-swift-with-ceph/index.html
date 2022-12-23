@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html class="scroll-smooth"><head>
+  
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+  <title>Just-Suke</title>
+  
+      
+
+  <link rel="icon" href="/assets/favicon-transparent.png" type="image/icon type">
+
+
+  
+
+  
+  <link rel="stylesheet" href="/css/style.min.b6b41955fc0c5f6f2e0bdc29e205fd09d5b487aebaf164fd34ed9fa39a1eee3d.css" integrity="sha256-trQZVfwMX28uC9wp4gX9CdW0h6668WT9NO2fo5oe7j0=">
+  
+
+</head><body class="min-h-screen flex flex-col bg-gray-100">
+
+
+<header class="w-full text-gray-900 bg-crayola dark-mode:text-gray-200 dark-mode:bg-battleship-gray sticky top-0 z-50">
+  <div x-data="{ open: false }"
+    class="flex flex-col max-w-screen-xl 2xl:max-w-screen-2xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
+    <div class="p-4 flex flex-row items-center justify-between">
+      <a href="/"
+        class="text-lg font-semibold tracking-widest text-gray-900 uppercase rounded-lg dark-mode:text-white focus:outline-none focus:shadow-outline">Just-Suke</a>
+      <button class="md:hidden rounded-lg focus:outline-none focus:shadow-outline" @click="open = !open">
+        <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+          <path x-show="!open" fill-rule="evenodd"
+            d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
+            clip-rule="evenodd"></path>
+          <path x-show="open" fill-rule="evenodd"
+            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+            clip-rule="evenodd"></path>
+        </svg>
+      </button>
+    </div>
+    <nav :class="{'flex': open, 'hidden': !open}"
+      class="flex-col flex-grow pb-4 md:pb-0 hidden md:flex md:justify-end md:flex-row">
+      <a class="transition duration-300 ease-out px-4 py-2 mt-2 text-sm text-center mx-auto md:mx-0 font-semibold rounded-lg  bg-transparent dark-mode:bg-transparent  dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gainsboro focus:bg-gainsboro focus:outline-none focus:shadow-outline"
+        href="/">Home</a>
+      <a class="transition duration-300 ease-out px-4 py-2 mt-2 text-sm text-center mx-auto md:mx-0 font-semibold rounded-lg  bg-transparent dark-mode:bg-transparent  dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gainsboro focus:bg-gainsboro focus:outline-none focus:shadow-outline"
+        href="/notes">Notes</a>
+      <a class="transition duration-300 ease-out px-4 py-2 mt-2 text-sm text-center mx-auto md:mx-0 font-semibold rounded-lg  bg-transparent dark-mode:bg-transparent  dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gainsboro focus:bg-gainsboro focus:outline-none focus:shadow-outline"
+        href="/about">About</a>
+
+      <div @click.away="open = false" class="relative md:ml-4 text-center 		" x-data="{ open: false }">
+        <button @click="open = !open"
+          class="transition duration-300 ease-out flex flex-row  justify-center w-full px-4 py-2 mt-2 text-sm font-semibold rounded-lg bg-transparent dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 hover:bg-gainsboro ">
+          <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}"
+            class="inline w-5 h-5 transition-transform duration-200 transform">
+            <path fill-rule="evenodd"
+              d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+              clip-rule="evenodd"></path>
+          </svg>
+        </button>
+        <div x-show="open" x-transition:enter="transition ease-out duration-100"
+          x-transition:enter-start="transform opacity-0 scale-95"
+          x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75"
+          x-transition:leave-start="transform opacity-100 scale-100"
+          x-transition:leave-end="transform opacity-0 scale-95"
+          class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-48">
+          <div class="px-2 py-2 bg-white rounded-md shadow dark-mode:bg-gray-800">
+            <a class="transition duration-300 ease-out block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gainsboro focus:bg-gainsboro focus:outline-none focus:shadow-outline"
+              href="/categories">Categories</a>
+            <a class="transition duration-300 ease-out block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gainsboro focus:bg-gainsboro focus:outline-none focus:shadow-outline"
+              href="/topics">Topics</a>
+          </div>
+        </div>
+      </div>
+
+
+    </nav>
+  </div>
+</header><div class="flex-1 flex flex-col sm:flex-row">
+          <main class="flex-1">
+            
+            <div id="content">
+
+
+
+
+
+
+<div class="container mx-auto max-w-screen-xl grid grid-cols-4 md:grid-cols-12">
+      <main role="main" class="col-span-4 lg:col-span-8 md:px-4 pt-4 md:pt-8">
+        <article class="bg-white md:rounded-2xl overflow-hidden shadow-xl mb-4 md:mb-8">
+          <div>
+            <img id="f2dda17d67dce90bfa13f23de9581b80" class="" src="/images/integrate-swift-with-ceph-rgw/banner.png">
+          </div>
+          <div class="px-8 py-6 md:px-16 md:py-12">
+            <h1 class=" text-3xl font-bold text-left sm:text-5xl text-gray-900  sm:leading-tight leading-tight">
+             Integrate Openstack Swift With Ceph
+            </h1>
+            <p class="text-base text-slate-700 dark:text-slate-200 mb-4">December 23, 2022 • Reading time: 3 minutes.</p>
+
+
+            <hr class="border-slate-300 dark:border-slate-700 mb-4" />
+
+            <div class="flex flex-wrap h-fit mb-4 gap-1">
+              
+              <a href="/topics/openstack"
+                class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700">#openstack</a>
+              
+            </div>
+
+            <div class="text-gray-700 text-base tracking-wide leading-loose">
+              <p>Pada catatan ini, saya akan membagikan cara untuk mengintegrasikan Openstack Swift dengan Ceph Object Storage yaitu <strong>Ceph Rados Gateway</strong>.</p>
+<br>
+<p>Openstack swift sendiri adalah layanan pada Openstack yang menyediakan Object Store. Layanan ini menawarkan layanan penyimpanan cloud yang dapat menyimpan dan mengambil banyak data dengan menggunakan API sederhana.</p>
+<br>
+<p>Sedangkan Ceph Rados Gateway adalah antarmuka object storage menyediakan aplikasi dengan gateway RESTful API ke Ceph Storage Cluster.</p>
+<br>
+<p>Untuk versi yang digunakan adalah sebagai berikut :</p>
+<ul class="list-disc pl-8">
+<li>Ubuntu 20.04</li>
+<li>Openstack Xena version</li>
+<li>Ceph Pacific Version</li>
+</ul>
+<br>
+<p>Diasumsikan bahwa sudah ada <strong>Openstack Cluster</strong> dan <strong>Ceph Cluster</strong> yang sudah berjalan normal dan setiap endpoint pada Openstack menggunakan HAProxy sebagai Load Balancer. Sehingga tahap yang dijelaskan oleh saya hanya proses untuk mengintegrasikan <strong>Openstack Swift</strong> dengan <strong>Ceph Rados Gateway</strong>.</p>
+<br>
+<p>Ceph rados gateway support API untuk swift, sehingga endpoint Openstack Swift bisa lansung diset ke API server dari Ceph rados gateway.</p>
+<br>
+<p>Requirement :</p>
+<ul class="list-disc pl-8">
+<li>Ceph Cluster yang sudah berjalan normal</li>
+<li>Openstack Cluster yang sudah berjalan normal dengan Minimal service + Swift service</li>
+</ul>
+<br>
+<h4 id="instalasi-dan-konfigurasi-ceph-rados-gateway">Instalasi dan Konfigurasi Ceph Rados Gateway</h4>
+<p>Untuk implementasinya, pertama instalasi dan konfigurasi Ceph Rados Gateway terlebih dahulu.</p>
+<br>
+<ol class="list-decimal pl-8">
+<li>
+<p>Instal paket <code class="line-code">radosgw</code> pada node yang akan difungsikan sebagai <code class="line-code">ceph rados gateway</code>. Pada skenario saya, node yang difungsikan sebagai ceph rados gateway adalah node controller pada Openstack Cluster.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-BashSession" data-lang="BashSession"><span class="line"><span class="cl"><span class="go">sudo apt install radosgw
+</span></span></span></code></pre></div></li>
+<li>
+<p>Edit file <code class="line-code">/etc/ceph/ceph.conf</code> pada setiap node yang akan dijadikan ceph rgw dengan menambahkan konfigurasi untuk ceph rgw</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">[client.rgw.&lt;NAMA_NODE&gt;] 
+</span></span><span class="line"><span class="cl">host = &lt;NAMA_NODE&gt; 
+</span></span><span class="line"><span class="cl">rgw frontends = &#34;civetweb port=&lt;IP_NODE&gt;:8080&#34; 
+</span></span><span class="line"><span class="cl">rgw keystone api version = 3 
+</span></span><span class="line"><span class="cl">rgw keystone url = &lt;KEYSTONE_ENDPOINT_URL&gt; 
+</span></span><span class="line"><span class="cl">rgw keystone admin user = admin 
+</span></span><span class="line"><span class="cl">rgw keystone admin password = &lt;PASSWORD_ADMIN&gt; 
+</span></span><span class="line"><span class="cl">rgw keystone admin tenant = admin 
+</span></span><span class="line"><span class="cl">rgw keystone accepted roles = admin 
+</span></span><span class="line"><span class="cl">rgw keystone admin domain = default 
+</span></span><span class="line"><span class="cl">rgw keystone token cache size = 500 
+</span></span><span class="line"><span class="cl">rgw keystone revocation interval = 300 
+</span></span><span class="line"><span class="cl">rgw keystone implicit tenants = true 
+</span></span><span class="line"><span class="cl">rgw swift account in url = true 
+</span></span><span class="line"><span class="cl">rgw s3 auth use keystone = true 
+</span></span><span class="line"><span class="cl">. . .
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>Membuat direktori <code class="line-code">/var/lib/ceph/radosgw/ceph-rgw.&lt;NAMA_NODE&gt;</code></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-BashSession" data-lang="BashSession"><span class="line"><span class="cl"><span class="go">sudo mkdir -p /var/lib/ceph/radosgw/ceph-rgw.&lt;NAMA_NODE&gt;
+</span></span></span></code></pre></div></li>
+<li>
+<p>Membuat keyring ceph untuk ceph-rgw</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-BashSession" data-lang="BashSession"><span class="line"><span class="cl"><span class="go">ceph auth get-or-create client.rgw.&lt;NAMA_NODE&gt; osd &#39;allow rwx&#39; mon &#39;allow rw&#39; -o /var/lib/ceph/radosgw/ceph-rgw.&lt;NAMA_NODE&gt;/keyring; 
+</span></span></span><span class="line"><span class="cl"><span class="go">chown -R ceph. /var/lib/ceph/radosgw;
+</span></span></span></code></pre></div></li>
+<li>
+<p>Menjalankan service ceph-rgw</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-BashSession" data-lang="BashSession"><span class="line"><span class="cl"><span class="go">systemctl enable --now ceph-radosgw@rgw.&lt;NAMA_NODE&gt;
+</span></span></span></code></pre></div></li>
+<li>
+<p>Kemudian, pastikan ceph-rgw tersebut sudah terdeteksi oleh Ceph cluster
+<img class="my-4 drop-shadow-2xl	" src="/images/integrate-swift-with-ceph-rgw/ceph-status.png" alt="Ceph Status"  title="Ceph status" onclick="showModal('\/images\/integrate-swift-with-ceph-rgw\/ceph-status.png')" />
+</p>
+<blockquote>
+<p><em>pada ceph status saya, terdeteksi 3 daemon yang nyala karena saya menginstall ceph-rgw pada tiga node controller.</em></p>
+</blockquote>
+</li>
+<li>
+<p>(Opsional) Jika ceph-rgw diinstall pada lebih dari satu node maka tambahkan konfigurasi pada Load Balancer (disini saya menggunakan HAProxy)</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">. . . 
+</span></span><span class="line"><span class="cl">listen cephrgw_api_cluster 
+</span></span><span class="line"><span class="cl">  bind &lt;INTERNAL_VIRTUAL_IP&gt;:8080 
+</span></span><span class="line"><span class="cl">  bind &lt;PUBLIC_VIRTUAL_IP&gt;:8080 
+</span></span><span class="line"><span class="cl">  balance source 
+</span></span><span class="line"><span class="cl">  option tcpka 
+</span></span><span class="line"><span class="cl">  option tcplog 
+</span></span><span class="line"><span class="cl">    server controller-1 &lt;NODE_1&gt;:8080 check inter 2000 rise 2 fall 5 
+</span></span><span class="line"><span class="cl">    server controller-2 &lt;NODE_2&gt;:8080 check inter 2000 rise 2 fall 5 
+</span></span><span class="line"><span class="cl">    server controller-3 &lt;NODE_3&gt;:8080 check inter 2000 rise 2 fall 5
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+<h4 id="konfigurasi-openstack-endpoint">Konfigurasi Openstack Endpoint</h4>
+<p>Setelah dilakukan instalasi dan konfigurasi Ceph Rados Gateway, selanjutnya konfigurasi Openstack dengan menambahkan endpoint untuk swift.</p>
+<br>
+<ol class="list-decimal pl-8">
+<li>Menambahkan endpoint untuk swift
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-BashSession" data-lang="BashSession"><span class="line"><span class="cl"><span class="gp">#</span> Endpoint Public
+</span></span><span class="line"><span class="cl"><span class="go">openstack endpoint create --region local \ 
+</span></span></span><span class="line"><span class="cl"><span class="go">object-store public \ 
+</span></span></span><span class="line"><span class="cl"><span class="go">&#39;http://public.cluster.local:8080/swift/v1/AUTH_%(project_id)s&#39; 
+</span></span></span><span class="line"><span class="cl"><span class="go"></span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="gp">#</span> Endpoint Admin
+</span></span><span class="line"><span class="cl"><span class="go">openstack endpoint create --region local \ 
+</span></span></span><span class="line"><span class="cl"><span class="go">object-store admin \ 
+</span></span></span><span class="line"><span class="cl"><span class="go">&#39;http://admin.cluster.local:8080/swift/v1&#39; 
+</span></span></span><span class="line"><span class="cl"><span class="go"></span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="gp">#</span> Endpoint Internal
+</span></span><span class="line"><span class="cl"><span class="go">openstack endpoint create --region local \
+</span></span></span><span class="line"><span class="cl"><span class="go">object-store internal \
+</span></span></span><span class="line"><span class="cl"><span class="go">&#39;http://internal.cluster.local:8080/swift/v1/AUTH_%(project_id)s&#39;
+</span></span></span></code></pre></div></li>
+</ol>
+<p>Setelah semua proses diatas dilakukan, maka pada Openstack horizon akan muncul tab <code class="line-code">Object Storage</code>.</p>
+<p><img class="my-4 drop-shadow-2xl	" src="/images/integrate-swift-with-ceph-rgw/swift.png" alt="Horizon"  title="Horizon" onclick="showModal('\/images\/integrate-swift-with-ceph-rgw\/swift.png')" />
+</p>
+<br>
+<h4 id="pengujian">Pengujian</h4>
+<ol class="list-decimal pl-8">
+<li>
+<p>Pengujian membuat container(pada swift dikenal dengan istilah container, pada cloud provider lain dikenal dengan bucket)
+<img class="my-4 drop-shadow-2xl	" src="/images/integrate-swift-with-ceph-rgw/create-container.png" alt="Container"  title="Create container" onclick="showModal('\/images\/integrate-swift-with-ceph-rgw\/create-container.png')" />
+</p>
+</li>
+<li>
+<p>Pengujian upload file ke dalam container
+<img class="my-4 drop-shadow-2xl	" src="/images/integrate-swift-with-ceph-rgw/upload-1.png" alt="Upload-1"  title="Upload" onclick="showModal('\/images\/integrate-swift-with-ceph-rgw\/upload-1.png')" />
+
+<img class="my-4 drop-shadow-2xl	" src="/images/integrate-swift-with-ceph-rgw/upload-2.png" alt="Upload-2"  title="Hasil" onclick="showModal('\/images\/integrate-swift-with-ceph-rgw\/upload-2.png')" />
+</p>
+</li>
+<li>
+<p>Pengujian download dari container
+<img class="my-4 drop-shadow-2xl	" src="/images/integrate-swift-with-ceph-rgw/download.png" alt="Download"  title="Download" onclick="showModal('\/images\/integrate-swift-with-ceph-rgw\/download.png')" />
+</p>
+</li>
+</ol>
+<br>
+<hr>
+<br>
+<p>Yah begitulah cara integrasi Openstack Swift dengan Ceph Rados Gateway.</p>
+<p>Selamat ngoprek!</p>
+
+            </div>
+          </div>
+        </article>
+
+        <div id="disqus_thread" class="bg-white md:rounded-2xl shadow-xl px-8 py-6 md:px-16 md:py-12 mb-4 md:mb-8"></div><script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhosts")
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'bytesiciannetlifyapp';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a></main><aside class="col-span-4 md:px-4 md:py-8">
+
+  <div class="sticky top-16 bg-white md:rounded-2xl shadow-xl overflow-hidden mb-4 md:mb-0">
+
+  <div class="w-full ">
+    
+    <div class="text-3xl font-bold text-left sm:text-2xl text-gray-900 p-4 border-b border-slate-300 dark:border-slate-700 ">
+      Latest Notes
+    </div>
+  </div>
+
+  
+    <a href="/notes/integrate-openstack-swift-with-ceph/">
+      <div
+        class="transition duration-300 ease-out flex justify-between items-center gap-x-px	 hover:bg-slate-100 dark:hover:bg-slate-700 active:scale-95 active:rounded-xl transition-all p-4">
+        <div class="flex-none w-3/4">
+          <h3 class="font-semibold text-lg mb-2 line-clamp-2">Integrate Openstack Swift With Ceph</h3>
+          <p class="text-xs text-slate-700 dark:text-slate-200 line-clamp-1">December 23, 2022 • Reading time: 3 minutes.</p>
+        </div>
+        <img id="f2dda17d67dce90bfa13f23de9581b80" class=" w-1/4" src="/images/integrate-swift-with-ceph-rgw/OpenStack-Logo-Mark.png">
+      </div>
+    </a>
+
+  
+
+</div>
+
+
+
+</aside>
+</div>
+
+    
+    <div id="modal"
+        class="hidden fixed top-0 left-0 z-[80] w-screen h-screen bg-black/70 flex justify-center items-center">
+
+        
+        <a class="fixed z-[90] top-6 right-8 text-white text-5xl font-bold" href="javascript:void(0)"
+            onclick="closeModal()">&times;</a>
+
+        
+        <img id="modal-img" class="max-w-full	md:max-w-7xl		 object-cover" />
+    </div>
+
+
+
+
+            </div>
+          </main>
+        </div><section class="text-gray-900 bg-crayola dark-mode:text-gray-200 dark-mode:bg-battleship-gray">
+  <div class="max-w-screen-xl px-4 py-12 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8">
+    <nav class="flex flex-wrap justify-center -mx-5 -my-2">
+      <div class="px-5 py-2">
+        <a href="/" class="leading-6 text-sm font-semibold dark-mode:hover:text-white dark-mode:text-gray-200">
+          Home
+        </a>
+      </div>
+      <div class="px-5 py-2">
+        <a href="/notes" class="leading-6 text-sm font-semibold dark-mode:hover:text-white dark-mode:text-gray-200">
+          Robi's Notes
+        </a>
+      </div>
+      <div class="px-5 py-2">
+        <a href="/about" class="leading-6 text-sm font-semibold dark-mode:hover:text-white dark-mode:text-gray-200 ">
+          About
+        </a>
+      </div>
+    </nav>
+    <div class="flex justify-center mt-8 space-x-6">
+      <a rel="noopener noreferrer" href="https://github.com/robisetiapermadi/" target="_blank" aria-label="GitHub"
+        class="p-1 rounded-md dark:text-gray-100 hover:dark:text-violet-400">
+        <svg viewBox="0 0 496 512" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-current">
+          <title>Github</title>
+          <path
+            d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z">
+          </path>
+        </svg>
+      </a>
+      <a rel="noopener noreferrer" href="https://www.linkedin.com/in/robi-setia-permadi-239a1620a/" target="_blank"
+        aria-label="Linkedin" class="p-1 rounded-md dark:text-gray-100 hover:dark:text-violet-400">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-current" viewBox="0 0 16 16">
+          <title>Linkedin</title>
+          <path
+            d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z" />
+        </svg>
+      </a>
+      <a rel="noopener noreferrer" href="mailto:setiapermadir@gmail.com" aria-label="Email"
+        class="p-1 rounded-md dark:text-gray-100 hover:dark:text-violet-400">
+        <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-current">
+          <title>Email</title>
+          <path
+            d="M464 64H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm0 48v40.805c-22.422 18.259-58.168 46.651-134.587 106.49-16.841 13.247-50.201 45.072-73.413 44.701-23.208.375-56.579-31.459-73.413-44.701C106.18 199.465 70.425 171.067 48 152.805V112h416zM48 400V214.398c22.914 18.251 55.409 43.862 104.938 82.646 21.857 17.205 60.134 55.186 103.062 54.955 42.717.231 80.509-37.199 103.053-54.947 49.528-38.783 82.032-64.401 104.947-82.653V400H48z">
+          </path>
+        </svg>
+      </a>
+
+    </div>
+    <p class="mt-8 text-base leading-6 text-center dark-mode:hover:text-white dark-mode:text-gray-200">
+      © 2022 Just-Suke · Made with ❤️ using Hugo
+    </p>
+  </div>
+</section><script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+
+
+
+    
+
+
+
+
+
+
+  <script src="/js/main.min.5aeb0a578a764d9b9585be170626955aeb4f367cb307f699a75ddbe6383c71e4.js" integrity="sha256-WusKV4p2TZuVhb4XBiaVWutPNnyzB/aZp13b5jg8ceQ=" defer></script>
+  <script type="module" src="/js/module.js" integrity="" defer></script>
+  
+
+
+
+  <script>
+    
+    var modal = document.getElementById("modal");
+
+    
+    var modalImg = document.getElementById("modal-img");
+
+    
+    function showModal(src) {
+        modal.classList.remove('hidden');
+        modalImg.src = src;
+    }
+
+    
+    function closeModal() {
+        modal.classList.add('hidden');
+    }
+</script>
+</body>
+</html>
