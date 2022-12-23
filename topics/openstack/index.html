@@ -224,12 +224,18 @@
         modal.classList.add('hidden');
     }
 </script>
+
+
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-R5ZM4RDDX1"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-R5ZM4RDDX1', { 'anonymize_ip': false });
+}
+</script>
 
-  gtag('config', 'G-R5ZM4RDDX1');
-</script></body>
+</body>
 </html>
