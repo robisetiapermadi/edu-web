@@ -1,0 +1,1 @@
+function goToContent(){const e=document.getElementById("content");var t=70,n=e.getBoundingClientRect().top,s=n+window.pageYOffset-t;window.scrollTo({top:s,behavior:"smooth"})}function getImage(e,t){var s=document.getElementById(e),n=new Image;n.onload=function(){s.src=this.src},n.src=t}

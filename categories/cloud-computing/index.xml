@@ -1,20 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Cloud Computing on Bytesician | Robi Setia Permadi</title>
-    <link>https://www.bytesician.my.id/categories/cloud-computing/</link>
-    <description>Recent content in Cloud Computing on Bytesician | Robi Setia Permadi</description>
+    <title>Cloud Computing on Just-suke</title>
+    <link>/categories/cloud-computing/</link>
+    <description>Recent content in Cloud Computing on Just-suke</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Copyright &amp;copy; 2021 | Made with ❤ by [Robi Setia Permadi](https://github.com/robisetiapermadi) using [Hugo Framework](https://gohugo.io/)</copyright>
-    <lastBuildDate>Sun, 21 Feb 2021 12:14:34 +0600</lastBuildDate><atom:link href="https://www.bytesician.my.id/categories/cloud-computing/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 23 Dec 2022 01:03:58 +0700</lastBuildDate><atom:link href="/categories/cloud-computing/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Deploy E-commerce dengan Kubernetes</title>
-      <link>https://www.bytesician.my.id/portfolio/weavesocks-kubernetes/</link>
-      <pubDate>Sun, 21 Feb 2021 12:14:34 +0600</pubDate>
+      <title>Integrate Openstack Swift With Ceph</title>
+      <link>/notes/integrate-openstack-swift-with-ceph/</link>
+      <pubDate>Fri, 23 Dec 2022 01:03:58 +0700</pubDate>
       
-      <guid>https://www.bytesician.my.id/portfolio/weavesocks-kubernetes/</guid>
-      <description></description>
+      <guid>/notes/integrate-openstack-swift-with-ceph/</guid>
+      <description>Pada catatan ini, saya akan membagikan cara untuk mengintegrasikan Openstack Swift dengan Ceph Object Storage yaitu Ceph Rados Gateway.
+Openstack swift sendiri adalah layanan pada Openstack yang menyediakan Object Store. Layanan ini menawarkan layanan penyimpanan cloud yang dapat menyimpan dan mengambil banyak data dengan menggunakan API sederhana.
+Sedangkan Ceph Rados Gateway adalah antarmuka object storage menyediakan aplikasi dengan gateway RESTful API ke Ceph Storage Cluster.
+Untuk versi yang digunakan adalah sebagai berikut :</description>
     </item>
     
   </channel>
