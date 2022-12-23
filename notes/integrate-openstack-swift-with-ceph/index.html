@@ -291,7 +291,7 @@
 (function() {
     
     
-    if (window.location.hostname == "localhosts")
+    if (window.location.hostname == "localhosts:1313")
         return;
 
     var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
@@ -437,5 +437,18 @@
         modal.classList.add('hidden');
     }
 </script>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-R5ZM4RDDX1"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-R5ZM4RDDX1', { 'anonymize_ip': false });
+}
+</script>
+
 </body>
 </html>
