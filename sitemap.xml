@@ -1,81 +1,81 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/categories/</loc>
+    <loc>https://just-suke.site/categories/</loc>
     <lastmod>2022-12-23T01:03:58+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="x-default"
-                href="/categories/"
+                href="https://just-suke.site/categories/"
                 />
   </url>
   
   <url>
-    <loc>/categories/cloud-computing/</loc>
+    <loc>https://just-suke.site/categories/cloud-computing/</loc>
     <lastmod>2022-12-23T01:03:58+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="x-default"
-                href="/categories/cloud-computing/"
+                href="https://just-suke.site/categories/cloud-computing/"
                 />
   </url>
   
   <url>
-    <loc>/notes/integrate-openstack-swift-with-ceph/</loc>
+    <loc>https://just-suke.site/notes/integrate-openstack-swift-with-ceph/</loc>
     <lastmod>2022-12-23T01:03:58+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="x-default"
-                href="/notes/integrate-openstack-swift-with-ceph/"
+                href="https://just-suke.site/notes/integrate-openstack-swift-with-ceph/"
                 />
   </url>
   
   <url>
-    <loc>/</loc>
+    <loc>https://just-suke.site/</loc>
     <lastmod>2022-12-23T01:03:58+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="x-default"
-                href="/"
+                href="https://just-suke.site/"
                 />
   </url>
   
   <url>
-    <loc>/notes/</loc>
+    <loc>https://just-suke.site/notes/</loc>
     <lastmod>2022-12-23T01:03:58+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="x-default"
-                href="/notes/"
+                href="https://just-suke.site/notes/"
                 />
   </url>
   
   <url>
-    <loc>/topics/openstack/</loc>
+    <loc>https://just-suke.site/topics/openstack/</loc>
     <lastmod>2022-12-23T01:03:58+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="x-default"
-                href="/topics/openstack/"
+                href="https://just-suke.site/topics/openstack/"
                 />
   </url>
   
   <url>
-    <loc>/topics/</loc>
+    <loc>https://just-suke.site/topics/</loc>
     <lastmod>2022-12-23T01:03:58+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="x-default"
-                href="/topics/"
+                href="https://just-suke.site/topics/"
                 />
   </url>
   
   <url>
-    <loc>/about/</loc>
+    <loc>https://just-suke.site/about/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="x-default"
-                href="/about/"
+                href="https://just-suke.site/about/"
                 />
   </url>
   
