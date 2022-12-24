@@ -1,28 +1,82 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
   <url>
     <loc>/categories/</loc>
     <lastmod>2022-12-23T01:03:58+07:00</lastmod>
-  </url><url>
+    <xhtml:link
+                rel="alternate"
+                hreflang="x-default"
+                href="/categories/"
+                />
+  </url>
+  
+  <url>
     <loc>/categories/cloud-computing/</loc>
     <lastmod>2022-12-23T01:03:58+07:00</lastmod>
-  </url><url>
+    <xhtml:link
+                rel="alternate"
+                hreflang="x-default"
+                href="/categories/cloud-computing/"
+                />
+  </url>
+  
+  <url>
     <loc>/notes/integrate-openstack-swift-with-ceph/</loc>
     <lastmod>2022-12-23T01:03:58+07:00</lastmod>
-  </url><url>
+    <xhtml:link
+                rel="alternate"
+                hreflang="x-default"
+                href="/notes/integrate-openstack-swift-with-ceph/"
+                />
+  </url>
+  
+  <url>
     <loc>/</loc>
     <lastmod>2022-12-23T01:03:58+07:00</lastmod>
-  </url><url>
+    <xhtml:link
+                rel="alternate"
+                hreflang="x-default"
+                href="/"
+                />
+  </url>
+  
+  <url>
     <loc>/notes/</loc>
     <lastmod>2022-12-23T01:03:58+07:00</lastmod>
-  </url><url>
+    <xhtml:link
+                rel="alternate"
+                hreflang="x-default"
+                href="/notes/"
+                />
+  </url>
+  
+  <url>
     <loc>/topics/openstack/</loc>
     <lastmod>2022-12-23T01:03:58+07:00</lastmod>
-  </url><url>
+    <xhtml:link
+                rel="alternate"
+                hreflang="x-default"
+                href="/topics/openstack/"
+                />
+  </url>
+  
+  <url>
     <loc>/topics/</loc>
     <lastmod>2022-12-23T01:03:58+07:00</lastmod>
-  </url><url>
-    <loc>/about/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="x-default"
+                href="/topics/"
+                />
   </url>
+  
+  <url>
+    <loc>/about/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="x-default"
+                href="/about/"
+                />
+  </url>
+  
 </urlset>
