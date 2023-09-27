@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>OpenStack on Just-suke</title>
-    <link>https://just-suke.site/topics/openstack/</link>
+    <link>https://just-suke.my.id/topics/openstack/</link>
     <description>Recent content in OpenStack on Just-suke</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 23 Dec 2022 01:03:58 +0700</lastBuildDate><atom:link href="https://just-suke.site/topics/openstack/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 23 Dec 2022 01:03:58 +0700</lastBuildDate><atom:link href="https://just-suke.my.id/topics/openstack/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Integrate Openstack Swift With Ceph</title>
-      <link>https://just-suke.site/notes/integrate-openstack-swift-with-ceph/</link>
+      <link>https://just-suke.my.id/notes/integrate-openstack-swift-with-ceph/</link>
       <pubDate>Fri, 23 Dec 2022 01:03:58 +0700</pubDate>
       
-      <guid>https://just-suke.site/notes/integrate-openstack-swift-with-ceph/</guid>
+      <guid>https://just-suke.my.id/notes/integrate-openstack-swift-with-ceph/</guid>
       <description>Pada catatan ini, saya akan membagikan cara untuk mengintegrasikan Openstack Swift dengan Ceph Object Storage yaitu Ceph Rados Gateway.
 Openstack swift sendiri adalah layanan pada Openstack yang menyediakan Object Store. Layanan ini menawarkan layanan penyimpanan cloud yang dapat menyimpan dan mengambil banyak data dengan menggunakan API sederhana.
 Sedangkan Ceph Rados Gateway adalah antarmuka object storage menyediakan aplikasi dengan gateway RESTful API ke Ceph Storage Cluster.
