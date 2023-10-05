@@ -15,7 +15,7 @@
   
 
   
-  <link rel="stylesheet" href="https://www.just-suke.my.id/css/style.min.13e46598efb9751f4eb1d9ad65f73b799534adae0052788b6b0027724f2d53b2.css" integrity="sha256-E+RlmO+5dR9OsdmtZfc7eZU0ra4AUniLawAnck8tU7I=">
+  <link rel="stylesheet" href="https://www.just-suke.my.id/css/style.min.2ec8d91124691a5be0e9f5cb86cd85636ce36a3e0c78b3440ad8a34536e9cd92.css" integrity="sha256-LsjZESRpGlvg6fXLhs2FY2zjaj4MeLNECtijRTbpzZI=">
   
 
 </head>
@@ -138,8 +138,8 @@
 <ol class="list-decimal pl-8">
 <li>
 <p>Instal paket <code class="line-code">radosgw</code> pada node yang akan difungsikan sebagai <code class="line-code">ceph rados gateway</code>. Pada skenario saya, node yang difungsikan sebagai ceph rados gateway adalah node controller pada Openstack Cluster.</p>
-<pre tabindex="0"><code class="language-BashSession" data-lang="BashSession">sudo apt install radosgw
-</code></pre></li>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash-Session" data-lang="Bash-Session"><span class="line"><span class="cl"><span class="go">sudo apt install radosgw
+</span></span></span></code></pre></div></li>
 <li>
 <p>Edit file <code class="line-code">/etc/ceph/ceph.conf</code> pada setiap node yang akan dijadikan ceph rgw dengan menambahkan konfigurasi untuk ceph rgw</p>
 <div class="highlight"><div class="chroma">
@@ -183,17 +183,17 @@
 </div></li>
 <li>
 <p>Membuat direktori <code class="line-code">/var/lib/ceph/radosgw/ceph-rgw.&lt;NAMA_NODE&gt;</code></p>
-<pre tabindex="0"><code class="language-BashSession" data-lang="BashSession">sudo mkdir -p /var/lib/ceph/radosgw/ceph-rgw.&lt;NAMA_NODE&gt;
-</code></pre></li>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash-Session" data-lang="Bash-Session"><span class="line"><span class="cl"><span class="go">sudo mkdir -p /var/lib/ceph/radosgw/ceph-rgw.&lt;NAMA_NODE&gt;
+</span></span></span></code></pre></div></li>
 <li>
 <p>Membuat keyring ceph untuk ceph-rgw</p>
-<pre tabindex="0"><code class="language-BashSession" data-lang="BashSession">ceph auth get-or-create client.rgw.&lt;NAMA_NODE&gt; osd &#39;allow rwx&#39; mon &#39;allow rw&#39; -o /var/lib/ceph/radosgw/ceph-rgw.&lt;NAMA_NODE&gt;/keyring; 
-chown -R ceph. /var/lib/ceph/radosgw;
-</code></pre></li>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash-Session" data-lang="Bash-Session"><span class="line"><span class="cl"><span class="go">ceph auth get-or-create client.rgw.&lt;NAMA_NODE&gt; osd &#39;allow rwx&#39; mon &#39;allow rw&#39; -o /var/lib/ceph/radosgw/ceph-rgw.&lt;NAMA_NODE&gt;/keyring; 
+</span></span></span><span class="line"><span class="cl"><span class="go">chown -R ceph. /var/lib/ceph/radosgw;
+</span></span></span></code></pre></div></li>
 <li>
 <p>Menjalankan service ceph-rgw</p>
-<pre tabindex="0"><code class="language-BashSession" data-lang="BashSession">systemctl enable --now ceph-radosgw@rgw.&lt;NAMA_NODE&gt;
-</code></pre></li>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash-Session" data-lang="Bash-Session"><span class="line"><span class="cl"><span class="go">systemctl enable --now ceph-radosgw@rgw.&lt;NAMA_NODE&gt;
+</span></span></span></code></pre></div></li>
 <li>
 <p>Kemudian, pastikan ceph-rgw tersebut sudah terdeteksi oleh Ceph cluster
 <img class="my-4 drop-shadow-2xl	" src="/images/integrate-swift-with-ceph-rgw/ceph-status.png" alt="Ceph Status"  title="Ceph status" onclick="showModal('\/images\/integrate-swift-with-ceph-rgw\/ceph-status.png')" />
@@ -237,21 +237,21 @@ chown -R ceph. /var/lib/ceph/radosgw;
 <br>
 <ol class="list-decimal pl-8">
 <li>Menambahkan endpoint untuk swift
-<pre tabindex="0"><code class="language-BashSession" data-lang="BashSession"># Endpoint Public
-openstack endpoint create --region local \ 
-object-store public \ 
-&#39;http://public.cluster.local:8080/swift/v1/AUTH_%(project_id)s&#39; 
-
-# Endpoint Admin
-openstack endpoint create --region local \ 
-object-store admin \ 
-&#39;http://admin.cluster.local:8080/swift/v1&#39; 
-
-# Endpoint Internal
-openstack endpoint create --region local \
-object-store internal \
-&#39;http://internal.cluster.local:8080/swift/v1/AUTH_%(project_id)s&#39;
-</code></pre></li>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash-Session" data-lang="Bash-Session"><span class="line"><span class="cl"><span class="gp">#</span> Endpoint Public
+</span></span><span class="line"><span class="cl"><span class="go">openstack endpoint create --region local \ 
+</span></span></span><span class="line"><span class="cl"><span class="go">object-store public \ 
+</span></span></span><span class="line"><span class="cl"><span class="go">&#39;http://public.cluster.local:8080/swift/v1/AUTH_%(project_id)s&#39; 
+</span></span></span><span class="line"><span class="cl"><span class="go"></span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="gp">#</span> Endpoint Admin
+</span></span><span class="line"><span class="cl"><span class="go">openstack endpoint create --region local \ 
+</span></span></span><span class="line"><span class="cl"><span class="go">object-store admin \ 
+</span></span></span><span class="line"><span class="cl"><span class="go">&#39;http://admin.cluster.local:8080/swift/v1&#39; 
+</span></span></span><span class="line"><span class="cl"><span class="go"></span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="gp">#</span> Endpoint Internal
+</span></span><span class="line"><span class="cl"><span class="go">openstack endpoint create --region local \
+</span></span></span><span class="line"><span class="cl"><span class="go">object-store internal \
+</span></span></span><span class="line"><span class="cl"><span class="go">&#39;http://internal.cluster.local:8080/swift/v1/AUTH_%(project_id)s&#39;
+</span></span></span></code></pre></div></li>
 </ol>
 <p>Setelah semua proses diatas dilakukan, maka pada Openstack horizon akan muncul tab <code class="line-code">Object Storage</code>.</p>
 <p><img class="my-4 drop-shadow-2xl	" src="/images/integrate-swift-with-ceph-rgw/swift.png" alt="Horizon"  title="Horizon" onclick="showModal('\/images\/integrate-swift-with-ceph-rgw\/swift.png')" />
