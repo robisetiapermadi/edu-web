@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Topics on Just-suke</title>
-    <link>https://www.just-suke.my.id/topics/</link>
-    <description>Recent content in Topics on Just-suke</description>
+    <title>Topics on EDU WEB</title>
+    <link>https://edu.lab.just-suke.my.id/topics/</link>
+    <description>Recent content in Topics on EDU WEB</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 23 Dec 2022 01:03:58 +0700</lastBuildDate><atom:link href="https://www.just-suke.my.id/topics/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 23 Dec 2022 01:03:58 +0700</lastBuildDate><atom:link href="https://edu.lab.just-suke.my.id/topics/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>OpenStack</title>
-      <link>https://www.just-suke.my.id/topics/openstack/</link>
+      <link>https://edu.lab.just-suke.my.id/topics/openstack/</link>
       <pubDate>Fri, 23 Dec 2022 01:03:58 +0700</pubDate>
       
-      <guid>https://www.just-suke.my.id/topics/openstack/</guid>
+      <guid>https://edu.lab.just-suke.my.id/topics/openstack/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Kubernetes</title>
-      <link>https://www.just-suke.my.id/topics/kubernetes/</link>
+      <link>https://edu.lab.just-suke.my.id/topics/kubernetes/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.just-suke.my.id/topics/kubernetes/</guid>
+      <guid>https://edu.lab.just-suke.my.id/topics/kubernetes/</guid>
       <description></description>
     </item>
     

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>About on Just-suke</title>
-    <link>https://www.just-suke.my.id/about/</link>
-    <description>Recent content in About on Just-suke</description>
+    <title>About on EDU WEB</title>
+    <link>https://edu.lab.just-suke.my.id/about/</link>
+    <description>Recent content in About on EDU WEB</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://www.just-suke.my.id/about/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="https://edu.lab.just-suke.my.id/about/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
