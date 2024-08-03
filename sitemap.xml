@@ -2,7 +2,7 @@
   
   <url>
     <loc>https://edu.lab.just-suke.my.id/categories/</loc>
-    <lastmod>2024-08-04T01:03:58+07:00</lastmod>
+    <lastmod>2024-08-04T03:03:58+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="x-default"
@@ -12,7 +12,7 @@
   
   <url>
     <loc>https://edu.lab.just-suke.my.id/</loc>
-    <lastmod>2024-08-04T01:03:58+07:00</lastmod>
+    <lastmod>2024-08-04T03:03:58+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="x-default"
@@ -22,7 +22,7 @@
   
   <url>
     <loc>https://edu.lab.just-suke.my.id/topics/html/</loc>
-    <lastmod>2024-08-04T01:03:58+07:00</lastmod>
+    <lastmod>2024-08-04T03:03:58+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="x-default"
@@ -32,7 +32,7 @@
   
   <url>
     <loc>https://edu.lab.just-suke.my.id/notes/</loc>
-    <lastmod>2024-08-04T01:03:58+07:00</lastmod>
+    <lastmod>2024-08-04T03:03:58+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="x-default"
@@ -42,7 +42,7 @@
   
   <url>
     <loc>https://edu.lab.just-suke.my.id/categories/pemrograman-web/</loc>
-    <lastmod>2024-08-04T01:03:58+07:00</lastmod>
+    <lastmod>2024-08-04T03:03:58+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="x-default"
@@ -52,7 +52,7 @@
   
   <url>
     <loc>https://edu.lab.just-suke.my.id/topics/</loc>
-    <lastmod>2024-08-04T01:03:58+07:00</lastmod>
+    <lastmod>2024-08-04T03:03:58+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="x-default"
@@ -61,12 +61,42 @@
   </url>
   
   <url>
-    <loc>https://edu.lab.just-suke.my.id/notes/tutorial-membuat-table-pada-html/</loc>
+    <loc>https://edu.lab.just-suke.my.id/notes/tutorial-membuat-form-pada-html/</loc>
+    <lastmod>2024-08-04T03:03:58+07:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="x-default"
+                href="https://edu.lab.just-suke.my.id/notes/tutorial-membuat-form-pada-html/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://edu.lab.just-suke.my.id/notes/tutorial-membuat-tabel-pada-html/</loc>
     <lastmod>2024-08-04T01:03:58+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="x-default"
-                href="https://edu.lab.just-suke.my.id/notes/tutorial-membuat-table-pada-html/"
+                href="https://edu.lab.just-suke.my.id/notes/tutorial-membuat-tabel-pada-html/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://edu.lab.just-suke.my.id/notes/tutorial-menambahkan-audio-pada-html/</loc>
+    <lastmod>2024-08-04T01:03:58+07:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="x-default"
+                href="https://edu.lab.just-suke.my.id/notes/tutorial-menambahkan-audio-pada-html/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://edu.lab.just-suke.my.id/notes/tutorial-menambahkan-video-pada-html/</loc>
+    <lastmod>2024-08-04T01:03:58+07:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="x-default"
+                href="https://edu.lab.just-suke.my.id/notes/tutorial-menambahkan-video-pada-html/"
                 />
   </url>
   
