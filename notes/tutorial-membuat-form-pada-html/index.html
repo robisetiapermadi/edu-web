@@ -147,12 +147,12 @@
 
                   <h4 id="contoh-penggunaan-elemen-form">Contoh penggunaan elemen form</h4>
                   <p>Berikut adalah contoh penggunaan elemen form: </p>
-<div class="highlight">
-<div class="chroma">
-<table class="lntable">
-<tr>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+    <div class="highlight">
+        <div class="chroma">
+            <table class="lntable">
+                <tr>
+                    <td class="lntd">
+                        <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -163,26 +163,97 @@
 </span><span class="lnt"> 9
 </span><span class="lnt">10
 </span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
 </span></code></pre>
-</td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">. . . 
-</span></span><span class="line"><span class="cl">&lt;form action=&quot;/submit&quot; method=&quot;post&quot;&gt;
-</span></span><span class="line"><span class="cl">    &lt;label for=&quot;name&quot;&gt;Nama:&lt;/label&gt;&lt;br&gt; 
-</span></span><span class="line"><span class="cl">    &lt;input type=&quot;text&quot; id=&quot;name&quot; name=&quot;name&quot; required&gt;&lt;br&gt;&lt;br&gt;
+                    </td>
+                    <td class="lntd">
+                        <pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">&lt;form action=&quot;/submit&quot; method=&quot;post&quot;&gt;
+</span></span><span class="line"><span class="cl">    &lt;label for=&quot;text&quot;&gt;Text Input:&lt;/label&gt;&lt;br&gt;
+</span></span><span class="line"><span class="cl">    &lt;input type=&quot;text&quot; id=&quot;text&quot; name=&quot;text&quot;&gt;&lt;br&gt;&lt;br&gt;
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    &lt;label for=&quot;password&quot;&gt;Password:&lt;/label&gt;&lt;br&gt;
+</span></span><span class="line"><span class="cl">    &lt;input type=&quot;password&quot; id=&quot;password&quot; name=&quot;password&quot;&gt;&lt;br&gt;&lt;br&gt;
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    &lt;label for=&quot;email&quot;&gt;Email:&lt;/label&gt;&lt;br&gt; 
-</span></span><span class="line"><span class="cl">    &lt;input type=&quot;email&quot; id=&quot;email&quot; name=&quot;email&quot; required&gt;&lt;br&gt;&lt;br&gt; 
-</span></span><span class="line"><span class="cl"> 
-</span></span><span class="line"><span class="cl">&lt;button type=&quot;submit&quot;&gt;Submit&lt;/button&gt; 
-</span></span><span class="line"><span class="cl">&lt;/form&gt; 
-</span></span><span class="line"><span class="cl">. . .
+</span></span><span class="line"><span class="cl">    &lt;label for=&quot;email&quot;&gt;Email:&lt;/label&gt;&lt;br&gt;
+</span></span><span class="line"><span class="cl">    &lt;input type=&quot;email&quot; id=&quot;email&quot; name=&quot;email&quot;&gt;&lt;br&gt;&lt;br&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    &lt;label for=&quot;number&quot;&gt;Number:&lt;/label&gt;&lt;br&gt;
+</span></span><span class="line"><span class="cl">    &lt;input type=&quot;number&quot; id=&quot;number&quot; name=&quot;number&quot;&gt;&lt;br&gt;&lt;br&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    &lt;label for=&quot;date&quot;&gt;Date:&lt;/label&gt;&lt;br&gt;
+</span></span><span class="line"><span class="cl">    &lt;input type=&quot;date&quot; id=&quot;date&quot; name=&quot;date&quot;&gt;&lt;br&gt;&lt;br&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    &lt;label for=&quot;file&quot;&gt;File:&lt;/label&gt;&lt;br&gt;
+</span></span><span class="line"><span class="cl">    &lt;input type=&quot;file&quot; id=&quot;file&quot; name=&quot;file&quot;&gt;&lt;br&gt;&lt;br&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    &lt;label for=&quot;textarea&quot;&gt;Textarea:&lt;/label&gt;&lt;br&gt;
+</span></span><span class="line"><span class="cl">    &lt;textarea id=&quot;textarea&quot; name=&quot;textarea&quot;&gt;&lt;/textarea&gt;&lt;br&gt;&lt;br&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    &lt;label for=&quot;select&quot;&gt;Select:&lt;/label&gt;&lt;br&gt;
+</span></span><span class="line"><span class="cl">    &lt;select id=&quot;select&quot; name=&quot;select&quot;&gt;
+</span></span><span class="line"><span class="cl">        &lt;option value=&quot;option1&quot;&gt;Option 1&lt;/option&gt;
+</span></span><span class="line"><span class="cl">        &lt;option value=&quot;option2&quot;&gt;Option 2&lt;/option&gt;
+</span></span><span class="line"><span class="cl">        &lt;option value=&quot;option3&quot;&gt;Option 3&lt;/option&gt;
+</span></span><span class="line"><span class="cl">    &lt;/select&gt;&lt;br&gt;&lt;br&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    &lt;fieldset&gt;
+</span></span><span class="line"><span class="cl">        &lt;legend&gt;Checkboxes&lt;/legend&gt;
+</span></span><span class="line"><span class="cl">        &lt;label for=&quot;checkbox1&quot;&gt;
+</span></span><span class="line"><span class="cl">            &lt;input type=&quot;checkbox&quot; id=&quot;checkbox1&quot; name=&quot;checkbox&quot; value=&quot;checkbox1&quot;&gt; Checkbox 1
+</span></span><span class="line"><span class="cl">        &lt;/label&gt;&lt;br&gt;
+</span></span><span class="line"><span class="cl">        &lt;label for=&quot;checkbox2&quot;&gt;
+</span></span><span class="line"><span class="cl">            &lt;input type=&quot;checkbox&quot; id=&quot;checkbox2&quot; name=&quot;checkbox&quot; value=&quot;checkbox2&quot;&gt; Checkbox 2
+</span></span><span class="line"><span class="cl">        &lt;/label&gt;&lt;br&gt;
+</span></span><span class="line"><span class="cl">        &lt;label for=&quot;checkbox3&quot;&gt;
+</span></span><span class="line"><span class="cl">            &lt;input type=&quot;checkbox&quot; id=&quot;checkbox3&quot; name=&quot;checkbox&quot; value=&quot;checkbox3&quot;&gt; Checkbox 3
+</span></span><span class="line"><span class="cl">        &lt;/label&gt;&lt;br&gt;
+</span></span><span class="line"><span class="cl">    &lt;/fieldset&gt;&lt;br&gt;&lt;br&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    &lt;fieldset&gt;
+</span></span><span class="line"><span class="cl">        &lt;legend&gt;Radio Buttons&lt;/legend&gt;
+</span></span><span class="line"><span class="cl">        &lt;label for=&quot;radio1&quot;&gt;
+</span></span><span class="line"><span class="cl">            &lt;input type=&quot;radio&quot; id=&quot;radio1&quot; name=&quot;radio&quot; value=&quot;radio1&quot;&gt; Radio 1
+</span></span><span class="line"><span class="cl">        &lt;/label&gt;&lt;br&gt;
+</span></span><span class="line"><span class="cl">        &lt;label for=&quot;radio2&quot;&gt;
+</span></span><span class="line"><span class="cl">            &lt;input type=&quot;radio&quot; id=&quot;radio2&quot; name=&quot;radio&quot; value=&quot;radio2&quot;&gt; Radio 2
+</span></span><span class="line"><span class="cl">        &lt;/label&gt;&lt;br&gt;
+</span></span><span class="line"><span class="cl">        &lt;label for=&quot;radio3&quot;&gt;
+</span></span><span class="line"><span class="cl">            &lt;input type=&quot;radio&quot; id=&quot;radio3&quot; name=&quot;radio&quot; value=&quot;radio3&quot;&gt; Radio 3
+</span></span><span class="line"><span class="cl">        &lt;/label&gt;&lt;br&gt;
+</span></span><span class="line"><span class="cl">    &lt;/fieldset&gt;&lt;br&gt;&lt;br&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    &lt;button type=&quot;submit&quot;&gt;Submit&lt;/button&gt;
+</span></span><span class="line"><span class="cl">&lt;/form&gt;
 </span></span></code></pre>
-</td>
-</tr>
-</table>
-</div>
-</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
 
 
 
