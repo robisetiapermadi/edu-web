@@ -152,42 +152,112 @@
                       <table class="lntable">
                         <tr>
                           <td class="lntd">
-                            <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-                  </span><span class="lnt"> 2
-                  </span><span class="lnt"> 3
-                  </span><span class="lnt"> 4
-                  </span><span class="lnt"> 5
-                  </span><span class="lnt"> 6
-                  </span><span class="lnt"> 7
-                  </span><span class="lnt"> 8
-                  </span><span class="lnt"> 9
-                  </span><span class="lnt">10
-                  </span><span class="lnt">11
-                  </span><span class="lnt">12
-                  </span><span class="lnt">13
-                  </span><span class="lnt">14
-                  </span><span class="lnt">15
-                  </span><span class="lnt">16
-                  </span></code></pre>
+                            <pre tabindex="0" class="chroma">
+                                <code>
+                                  <span class="lnt"> 1</span>
+                                  <span class="lnt"> 2</span>
+                                  <span class="lnt"> 3</span>
+                                  <span class="lnt"> 4</span>
+                                  <span class="lnt"> 5</span>
+                                  <span class="lnt"> 6</span>
+                                  <span class="lnt"> 7</span>
+                                  <span class="lnt"> 8</span>
+                                  <span class="lnt"> 9</span>
+                                  <span class="lnt">10</span>
+                                  <span class="lnt">11</span>
+                                  <span class="lnt">12</span>
+                                  <span class="lnt">13</span>
+                                  <span class="lnt">14</span>
+                                  <span class="lnt">15</span>
+                                  <span class="lnt">16</span>
+                                </code>
+                              </pre>
                           </td>
                           <td class="lntd">
-                            <pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">[client.rgw.&lt;NAMA_NODE&gt;] 
-                  </span></span><span class="line"><span class="cl">host = &lt;NAMA_NODE&gt; 
-                  </span></span><span class="line"><span class="cl">rgw frontends = &#34;civetweb port=&lt;IP_NODE&gt;:8080&#34; 
-                  </span></span><span class="line"><span class="cl">rgw keystone api version = 3 
-                  </span></span><span class="line"><span class="cl">rgw keystone url = &lt;KEYSTONE_ENDPOINT_URL&gt; 
-                  </span></span><span class="line"><span class="cl">rgw keystone admin user = admin 
-                  </span></span><span class="line"><span class="cl">rgw keystone admin password = &lt;PASSWORD_ADMIN&gt; 
-                  </span></span><span class="line"><span class="cl">rgw keystone admin tenant = admin 
-                  </span></span><span class="line"><span class="cl">rgw keystone accepted roles = admin 
-                  </span></span><span class="line"><span class="cl">rgw keystone admin domain = default 
-                  </span></span><span class="line"><span class="cl">rgw keystone token cache size = 500 
-                  </span></span><span class="line"><span class="cl">rgw keystone revocation interval = 300 
-                  </span></span><span class="line"><span class="cl">rgw keystone implicit tenants = true 
-                  </span></span><span class="line"><span class="cl">rgw swift account in url = true 
-                  </span></span><span class="line"><span class="cl">rgw s3 auth use keystone = true 
-                  </span></span><span class="line"><span class="cl">. . .
-                  </span></span></code></pre>
+                            <pre tabindex="0" class="chroma">
+                              <code class="language-text" data-lang="text">
+                                <span class="line">
+                                  <span class="cl">
+                                    [client.rgw.&lt;NAMA_NODE&gt;]
+                                  </span>
+                                </span>
+                                <span class="line">
+                                  <span class="cl">
+                                    host = &lt;NAMA_NODE&gt; 
+                                  </span>
+                                </span>
+                                <span class="line">
+                                  <span class="cl">
+                                    rgw frontends = &#34;civetweb port=&lt;IP_NODE&gt;:8080&#34; 
+                                  </span>
+                                </span>
+                                <span class="line">
+                                  <span class="cl">
+                                    rgw keystone api version = 3
+                                  </span>
+                                </span>
+                                <span class="line">
+                                  <span class="cl">
+                                    rgw keystone url = &lt;KEYSTONE_ENDPOINT_URL&gt;
+                                  </span>
+                                </span>
+                                <span class="line">
+                                  <span class="cl">
+                                    rgw keystone admin user = admin 
+                                  </span>
+                                </span>
+                                <span class="line">
+                                  <span class="cl">
+                                    rgw keystone admin password = &lt;PASSWORD_ADMIN&gt; 
+                                  </span>
+                                </span>
+                                <span class="line">
+                                  <span class="cl">
+                                    rgw keystone admin tenant = admin 
+                                  </span>
+                                </span>
+                                <span class="line">
+                                  <span class="cl">
+                                    rgw keystone accepted roles = admin 
+                                  </span>
+                                </span>
+                                <span class="line">
+                                  <span class="cl">
+                                    rgw keystone admin domain = default
+                                  </span>
+                                </span>
+                                <span class="line">
+                                  <span class="cl">
+                                    rgw keystone token cache size = 500
+                                  </span>
+                                </span>
+                                <span class="line">
+                                  <span class="cl">
+                                    rgw keystone revocation interval = 300
+                                  </span>
+                                </span>
+                                <span class="line">
+                                  <span class="cl">
+                                    rgw keystone implicit tenants = true 
+                                  </span>
+                                </span>
+                                <span class="line">
+                                  <span class="cl">
+                                    rgw swift account in url = true 
+                                  </span>
+                                </span>
+                                <span class="line">
+                                  <span class="cl">
+                                    rgw s3 auth use keystone = true 
+                                  </span>
+                                </span>
+                                <span class="line">
+                                  <span class="cl">
+                                    . . .
+                                  </span>
+                                </span>
+                              </code>
+                            </pre>
                           </td>
                         </tr>
                       </table>
