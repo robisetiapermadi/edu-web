@@ -145,7 +145,7 @@
                   </ul>
 
 
-                  <h4 id="contoh-penggunaan-elemen-form">Contoh penggunaan elemen form</h4>
+                  <h4 id="contoh-code-penggunaan-elemen-form">Contoh code penggunaan elemen form</h4>
                   <p>Berikut adalah contoh penggunaan elemen form: </p>
     <div class="highlight">
         <div class="chroma">
@@ -223,13 +223,13 @@
 </span></span><span class="line"><span class="cl">    &lt;fieldset&gt;
 </span></span><span class="line"><span class="cl">        &lt;legend&gt;Checkboxes&lt;/legend&gt;
 </span></span><span class="line"><span class="cl">        &lt;label for=&quot;checkbox1&quot;&gt;
-</span></span><span class="line"><span class="cl">            &lt;input type=&quot;checkbox&quot; id=&quot;checkbox1&quot; name=&quot;checkbox&quot; value=&quot;checkbox1&quot;&gt; Checkbox 1
+</span></span><span class="line"><span class="cl">            &lt;input type=&quot;checkbox&quot; id=&quot;checkbox1&quot; name=&quot;checkbox&quot; value=&quot;checkbox1&quot;&gt; Checkbox 1  
 </span></span><span class="line"><span class="cl">        &lt;/label&gt;&lt;br&gt;
 </span></span><span class="line"><span class="cl">        &lt;label for=&quot;checkbox2&quot;&gt;
-</span></span><span class="line"><span class="cl">            &lt;input type=&quot;checkbox&quot; id=&quot;checkbox2&quot; name=&quot;checkbox&quot; value=&quot;checkbox2&quot;&gt; Checkbox 2
+</span></span><span class="line"><span class="cl">            &lt;input type=&quot;checkbox&quot; id=&quot;checkbox2&quot; name=&quot;checkbox&quot; value=&quot;checkbox2&quot;&gt; Checkbox 2  
 </span></span><span class="line"><span class="cl">        &lt;/label&gt;&lt;br&gt;
 </span></span><span class="line"><span class="cl">        &lt;label for=&quot;checkbox3&quot;&gt;
-</span></span><span class="line"><span class="cl">            &lt;input type=&quot;checkbox&quot; id=&quot;checkbox3&quot; name=&quot;checkbox&quot; value=&quot;checkbox3&quot;&gt; Checkbox 3
+</span></span><span class="line"><span class="cl">            &lt;input type=&quot;checkbox&quot; id=&quot;checkbox3&quot; name=&quot;checkbox&quot; value=&quot;checkbox3&quot;&gt; Checkbox 3  
 </span></span><span class="line"><span class="cl">        &lt;/label&gt;&lt;br&gt;
 </span></span><span class="line"><span class="cl">    &lt;/fieldset&gt;&lt;br&gt;&lt;br&gt;
 </span></span><span class="line"><span class="cl">
@@ -254,6 +254,78 @@
             </table>
         </div>
     </div>
+                <h4 id="contoh-code-penggunaan-elemen-form">Contoh penggunaan elemen form</h4>
+                  <p>Berikut saya buatkan tampilan elemen Form jika dimasukan dalam HTML</p>
+
+                  <form action="/submit" method="post">
+                    <!-- Input Teks -->
+                    <label for="text">Text Input:</label><br>
+                    <input type="text" id="text" name="text"><br><br>
+            
+                    <!-- Input Kata Sandi -->
+                    <label for="password">Password:</label><br>
+                    <input type="password" id="password" name="password"><br><br>
+            
+                    <!-- Input Email -->
+                    <label for="email">Email:</label><br>
+                    <input type="email" id="email" name="email"><br><br>
+            
+                    <!-- Input Nomor -->
+                    <label for="number">Number:</label><br>
+                    <input type="number" id="number" name="number"><br><br>
+            
+                    <!-- Input Tanggal -->
+                    <label for="date">Date:</label><br>
+                    <input type="date" id="date" name="date"><br><br>
+            
+                    <!-- Input File -->
+                    <label for="file">File:</label><br>
+                    <input type="file" id="file" name="file"><br><br>
+            
+                    <!-- Textarea -->
+                    <label for="textarea">Textarea:</label><br>
+                    <textarea id="textarea" name="textarea"></textarea><br><br>
+            
+                    <!-- Select -->
+                    <label for="select">Select:</label><br>
+                    <select id="select" name="select">
+                        <option value="option1">Option 1</option>
+                        <option value="option2">Option 2</option>
+                        <option value="option3">Option 3</option>
+                    </select><br><br>
+            
+                    <!-- Checkbox -->
+                    <fieldset>
+                        <legend>Checkboxes</legend>
+                        <label for="checkbox1">
+                            <input type="checkbox" id="checkbox1" name="checkbox" value="checkbox1"> Checkbox 1
+                        </label><br>
+                        <label for="checkbox2">
+                            <input type="checkbox" id="checkbox2" name="checkbox" value="checkbox2"> Checkbox 2
+                        </label><br>
+                        <label for="checkbox3">
+                            <input type="checkbox" id="checkbox3" name="checkbox" value="checkbox3"> Checkbox 3
+                        </label><br>
+                    </fieldset><br>
+            
+                    <!-- Radio Button -->
+                    <fieldset>
+                        <legend>Radio Buttons</legend>
+                        <label for="radio1">
+                            <input type="radio" id="radio1" name="radio" value="radio1"> Radio 1
+                        </label><br>
+                        <label for="radio2">
+                            <input type="radio" id="radio2" name="radio" value="radio2"> Radio 2
+                        </label><br>
+                        <label for="radio3">
+                            <input type="radio" id="radio3" name="radio" value="radio3"> Radio 3
+                        </label><br>
+                    </fieldset><br>
+            
+                    <!-- Tombol Submit -->
+                    <button type="submit">Submit</button>
+                </form>
+            
 
 
 
