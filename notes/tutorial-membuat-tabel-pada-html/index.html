@@ -1,711 +1,496 @@
 <!DOCTYPE html>
 <html class="scroll-smooth">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>
-      Education with Robi and Hardi - Tutorial Membuat Tabel pada HTML
-    </title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link
-      rel="icon"
-      href="/assets/favicon-transparent.png"
-      type="image/icon type"
-    />
+  <title>
+    Education with Robi and Hardi - Tutorial Membuat Tabel pada HTML
+  </title>
 
-    <link
-      rel="stylesheet"
-      href="https://edu.lab.just-suke.my.id/css/style.min.2ec8d91124691a5be0e9f5cb86cd85636ce36a3e0c78b3440ad8a34536e9cd92.css"
-      integrity="sha256-LsjZESRpGlvg6fXLhs2FY2zjaj4MeLNECtijRTbpzZI="
-    />
-  </head>
-  <body class="min-h-screen flex flex-col bg-gray-100">
-    <header
-      class="w-full text-gray-900 bg-crayola dark-mode:text-gray-200 dark-mode:bg-battleship-gray sticky top-0 z-50"
-    >
-      <div
-        x-data="{ open: false }"
-        class="flex flex-col max-w-screen-xl 2xl:max-w-screen-2xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8"
-      >
-        <div class="p-4 flex flex-row items-center justify-between">
-          <a
-            href="/"
-            class="text-lg font-semibold tracking-widest text-gray-900 uppercase rounded-lg dark-mode:text-white focus:outline-none focus:shadow-outline"
-            >Education w/ Robi & Hardi</a
-          >
-          <button
-            class="md:hidden rounded-lg focus:outline-none focus:shadow-outline"
-            @click="open = !open"
-          >
-            <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
-              <path
-                x-show="!open"
-                fill-rule="evenodd"
-                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
-                clip-rule="evenodd"
-              ></path>
-              <path
-                x-show="open"
-                fill-rule="evenodd"
-                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                clip-rule="evenodd"
-              ></path>
+  <link rel="icon" href="/assets/favicon-transparent.png" type="image/icon type" />
+
+  <link rel="stylesheet"
+    href="https://edu.lab.just-suke.my.id/css/style.min.2ec8d91124691a5be0e9f5cb86cd85636ce36a3e0c78b3440ad8a34536e9cd92.css"
+    integrity="sha256-LsjZESRpGlvg6fXLhs2FY2zjaj4MeLNECtijRTbpzZI=" />
+</head>
+
+<body class="min-h-screen flex flex-col bg-gray-100">
+  <header
+    class="w-full text-gray-900 bg-crayola dark-mode:text-gray-200 dark-mode:bg-battleship-gray sticky top-0 z-50">
+    <div x-data="{ open: false }"
+      class="flex flex-col max-w-screen-xl 2xl:max-w-screen-2xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
+      <div class="p-4 flex flex-row items-center justify-between">
+        <a href="/"
+          class="text-lg font-semibold tracking-widest text-gray-900 uppercase rounded-lg dark-mode:text-white focus:outline-none focus:shadow-outline">Education
+          w/ Robi & Hardi</a>
+        <button class="md:hidden rounded-lg focus:outline-none focus:shadow-outline" @click="open = !open">
+          <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+            <path x-show="!open" fill-rule="evenodd"
+              d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
+              clip-rule="evenodd"></path>
+            <path x-show="open" fill-rule="evenodd"
+              d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+              clip-rule="evenodd"></path>
+          </svg>
+        </button>
+      </div>
+      <nav :class="{'flex': open, 'hidden': !open}"
+        class="flex-col flex-grow pb-4 md:pb-0 hidden md:flex md:justify-end md:flex-row">
+        <a class="transition duration-300 ease-out px-4 py-2 mt-2 text-sm text-center mx-auto md:mx-0 font-semibold rounded-lg bg-transparent dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gainsboro focus:bg-gainsboro focus:outline-none focus:shadow-outline"
+          href="/">Home</a>
+        <a class="transition duration-300 ease-out px-4 py-2 mt-2 text-sm text-center mx-auto md:mx-0 font-semibold rounded-lg bg-transparent dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gainsboro focus:bg-gainsboro focus:outline-none focus:shadow-outline"
+          href="/notes">Notes</a>
+        <a class="transition duration-300 ease-out px-4 py-2 mt-2 text-sm text-center mx-auto md:mx-0 font-semibold rounded-lg bg-transparent dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gainsboro focus:bg-gainsboro focus:outline-none focus:shadow-outline"
+          href="/about">About</a>
+
+        <div @click.away="open = false" class="relative md:ml-4 text-center" x-data="{ open: false }">
+          <button @click="open = !open"
+            class="transition duration-300 ease-out flex flex-row justify-center w-full px-4 py-2 mt-2 text-sm font-semibold rounded-lg bg-transparent dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 hover:bg-gainsboro">
+            <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}"
+              class="inline w-5 h-5 transition-transform duration-200 transform">
+              <path fill-rule="evenodd"
+                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                clip-rule="evenodd"></path>
             </svg>
           </button>
-        </div>
-        <nav
-          :class="{'flex': open, 'hidden': !open}"
-          class="flex-col flex-grow pb-4 md:pb-0 hidden md:flex md:justify-end md:flex-row"
-        >
-          <a
-            class="transition duration-300 ease-out px-4 py-2 mt-2 text-sm text-center mx-auto md:mx-0 font-semibold rounded-lg bg-transparent dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gainsboro focus:bg-gainsboro focus:outline-none focus:shadow-outline"
-            href="/"
-            >Home</a
-          >
-          <a
-            class="transition duration-300 ease-out px-4 py-2 mt-2 text-sm text-center mx-auto md:mx-0 font-semibold rounded-lg bg-transparent dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gainsboro focus:bg-gainsboro focus:outline-none focus:shadow-outline"
-            href="/notes"
-            >Notes</a
-          >
-          <a
-            class="transition duration-300 ease-out px-4 py-2 mt-2 text-sm text-center mx-auto md:mx-0 font-semibold rounded-lg bg-transparent dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gainsboro focus:bg-gainsboro focus:outline-none focus:shadow-outline"
-            href="/about"
-            >About</a
-          >
-
-          <div
-            @click.away="open = false"
-            class="relative md:ml-4 text-center"
-            x-data="{ open: false }"
-          >
-            <button
-              @click="open = !open"
-              class="transition duration-300 ease-out flex flex-row justify-center w-full px-4 py-2 mt-2 text-sm font-semibold rounded-lg bg-transparent dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 hover:bg-gainsboro"
-            >
-              <svg
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                :class="{'rotate-180': open, 'rotate-0': !open}"
-                class="inline w-5 h-5 transition-transform duration-200 transform"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                  clip-rule="evenodd"
-                ></path>
-              </svg>
-            </button>
-            <div
-              x-show="open"
-              x-transition:enter="transition ease-out duration-100"
-              x-transition:enter-start="transform opacity-0 scale-95"
-              x-transition:enter-end="transform opacity-100 scale-100"
-              x-transition:leave="transition ease-in duration-75"
-              x-transition:leave-start="transform opacity-100 scale-100"
-              x-transition:leave-end="transform opacity-0 scale-95"
-              class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-48"
-            >
-              <div
-                class="px-2 py-2 bg-white rounded-md shadow dark-mode:bg-gray-800"
-              >
-                <a
-                  class="transition duration-300 ease-out block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gainsboro focus:bg-gainsboro focus:outline-none focus:shadow-outline"
-                  href="/categories"
-                  >Categories</a
-                >
-                <a
-                  class="transition duration-300 ease-out block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gainsboro focus:bg-gainsboro focus:outline-none focus:shadow-outline"
-                  href="/topics"
-                  >Topics</a
-                >
-              </div>
+          <div x-show="open" x-transition:enter="transition ease-out duration-100"
+            x-transition:enter-start="transform opacity-0 scale-95"
+            x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75"
+            x-transition:leave-start="transform opacity-100 scale-100"
+            x-transition:leave-end="transform opacity-0 scale-95"
+            class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-48">
+            <div class="px-2 py-2 bg-white rounded-md shadow dark-mode:bg-gray-800">
+              <a class="transition duration-300 ease-out block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gainsboro focus:bg-gainsboro focus:outline-none focus:shadow-outline"
+                href="/categories">Categories</a>
+              <a class="transition duration-300 ease-out block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gainsboro focus:bg-gainsboro focus:outline-none focus:shadow-outline"
+                href="/topics">Topics</a>
             </div>
           </div>
-        </nav>
-      </div>
-    </header>
-    <div class="flex-1 flex flex-col sm:flex-row">
-      <main class="flex-1">
-        <div id="content">
-          <div
-            class="container mx-auto max-w-screen-2xl grid grid-cols-4 md:grid-cols-12"
-          >
-            <main
-              role="main"
-              class="col-span-4 md:col-span-8 md:px-4 pt-4 md:pt-8"
-            >
-              <article
-                class="bg-white md:rounded-2xl overflow-hidden shadow-xl mb-4 md:mb-8"
-              >
-                <div>
-                  <img
-                    id="682444807affb397118b360f36fd6a94"
-                    class=""
-                    src="/images/tutorial-membuat-tabel-pada-html/banner.png"
-                  />
+        </div>
+      </nav>
+    </div>
+  </header>
+  <div class="flex-1 flex flex-col sm:flex-row">
+    <main class="flex-1">
+      <div id="content">
+        <div class="container mx-auto max-w-screen-2xl grid grid-cols-4 md:grid-cols-12">
+          <main role="main" class="col-span-4 md:col-span-8 md:px-4 pt-4 md:pt-8">
+            <article class="bg-white md:rounded-2xl overflow-hidden shadow-xl mb-4 md:mb-8">
+              <div>
+                <img id="682444807affb397118b360f36fd6a94" class=""
+                  src="/images/tutorial-membuat-tabel-pada-html/banner.png" />
+              </div>
+              <div class="px-8 py-6 md:px-16 md:py-12">
+                <h1 class="text-3xl font-bold text-left sm:text-5xl text-gray-900 sm:leading-tight leading-tight">
+                  Tutorial Membuat Tabel pada HTML
+                </h1>
+                <p class="text-base text-slate-700 mb-4">August 4, 2024</p>
+
+                <hr class="border-slate-300 mb-4" />
+
+                <div class="flex flex-wrap h-fit mb-4 gap-1">
+                  <a href="/topics/html"
+                    class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700">#html</a>
                 </div>
-                <div class="px-8 py-6 md:px-16 md:py-12">
-                  <h1
-                    class="text-3xl font-bold text-left sm:text-5xl text-gray-900 sm:leading-tight leading-tight"
-                  >
-                    Tutorial Membuat Tabel pada HTML
-                  </h1>
-                  <p class="text-base text-slate-700 mb-4">August 4, 2024</p>
 
-                  <hr class="border-slate-300 mb-4" />
+                <div class="text-gray-700 text-base tracking-wide leading-loose">
+                  <p>
+                    Hallo kali ini saya menulis tutorial membuat tabel pada
+                    HTML. Sebelum ke tutorial, saya akan menjelaskan dulu apa
+                    itu tabel.
+                  </p>
+                  <h4 id="pengertian">Pengertian</h4>
+                  <p>
+                    Membuat tabel pada HTML adalah salah satu dasar yang
+                    penting dalam pembuatan halaman web. Tabel digunakan untuk
+                    menyajikan data dalam format yang terstruktur dan mudah
+                    dibaca. Berikut adalah tutorial lengkap tentang cara
+                    membuat tabel pada HTML.
+                  </p>
+                  <h4 id="pengertian">Struktur Dasar Tabel HTML</h4>
+                  <p>
+                    Tabel HTML dibuat menggunakan tag
+                    <code class="line-code">&lt;table&gt;</code> dan memiliki
+                    beberapa elemen penting:
+                  </p>
+                  <ul class="list-disc pl-8">
+                    <li>
+                      <code class="line-code">&lt;table&gt;</code>: Tag utama
+                      untuk membuat tabel.
+                    </li>
+                    <li>
+                      <code class="line-code">&lt;tr&gt;</code>: Tag untuk
+                      membuat baris dalam tabel.
+                    </li>
+                    <li>
+                      <code class="line-code">&lt;th&gt;</code>: Tag untuk
+                      membuat sel header dalam tabel, biasanya digunakan untuk
+                      judul kolom.
+                    </li>
+                    <li>
+                      <code class="line-code">&lt;td&gt;</code>: Tag untuk
+                      membuat sel data dalam tabel.
+                    </li>
+                  </ul>
 
-                  <div class="flex flex-wrap h-fit mb-4 gap-1">
-                    <a
-                      href="/topics/html"
-                      class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700"
-                      >#html</a
-                    >
+                  <h4 id="contoh-code-penggunaan-elemen-form">
+                    Contoh code penggunaan elemen form
+                  </h4>
+                  <p>Berikut adalah contoh struktur dasar tabel HTML:</p>
+                  <div class="highlight">
+                    <div class="chroma">
+                      <table class="lntable">
+                        <tr>
+                          <td class="lntd">
+                            <pre tabindex="0" class="chroma">
+                                    <code><span class="lnt"> 1
+            </span><span class="lnt"> 2
+            </span><span class="lnt"> 3
+            </span><span class="lnt"> 4
+            </span><span class="lnt"> 5
+            </span><span class="lnt"> 6
+            </span><span class="lnt"> 7
+            </span><span class="lnt"> 8
+            </span><span class="lnt"> 9
+            </span><span class="lnt">10
+            </span><span class="lnt">11
+            </span><span class="lnt">12
+            </span><span class="lnt">13
+            </span><span class="lnt">14
+            </span><span class="lnt">15
+            </span><span class="lnt">16
+            </span><span class="lnt">17
+            </span><span class="lnt">18
+            </span><span class="lnt">19
+            </span><span class="lnt">20
+            </span><span class="lnt">21
+            </span><span class="lnt">22
+            </span><span class="lnt">23
+            </span><span class="lnt">24
+            </span><span class="lnt">25
+            </span><span class="lnt">26
+            </span><span class="lnt">27
+            </span><span class="lnt">28
+            </span><span class="lnt">29
+            </span><span class="lnt">30
+            </span><span class="lnt">31
+            </span><span class="lnt">32
+            </span><span class="lnt">33
+            </span><span class="lnt">34
+            </span><span class="lnt">35
+            </span><span class="lnt">36
+            </span><span class="lnt">37
+            </span><span class="lnt">38
+            </span><span class="lnt">39
+            </span><span class="lnt">40
+            </span><span class="lnt">41
+            </span><span class="lnt">42
+            </span><span class="lnt">43
+            </span><span class="lnt">44
+            </span><span class="lnt">45
+            </span><span class="lnt">46
+            </span><span class="lnt">47
+            </span><span class="lnt">48
+            </span><span class="lnt">49
+            </span><span class="lnt">50
+            </span><span class="lnt">51
+            </span><span class="lnt">52
+            </span><span class="lnt">53
+            </span><span class="lnt">54
+            </span><span class="lnt">55
+            </span><span class="lnt">56
+            </span><span class="lnt">57
+            </span></code></pre>
+                          </td>
+                          <td class="lntd">
+                            <pre tabindex="0" class="chroma">
+                                    <code class="language-html" data-lang="html"><span class="line"><span class="cl">&lt;!DOCTYPE html&gt;
+            </span></span><span class="line"><span class="cl">&lt;html lang=&quot;en&quot;&gt;
+            </span></span><span class="line"><span class="cl">&lt;head&gt;
+            </span></span><span class="line"><span class="cl">    &lt;meta charset=&quot;UTF-8&quot;&gt;
+            </span></span><span class="line"><span class="cl">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+            </span></span><span class="line"><span class="cl">    &lt;title&gt;Contoh Tabel HTML&lt;/title&gt;
+            </span></span><span class="line"><span class="cl">&lt;/head&gt;
+            </span></span><span class="line"><span class="cl">&lt;body&gt;
+            </span></span><span class="line"><span class="cl">
+            </span></span><span class="line"><span class="cl">&lt;table border=&quot;1&quot;&gt;
+            </span></span><span class="line"><span class="cl">    &lt;tr&gt;
+            </span></span><span class="line"><span class="cl">        &lt;th&gt;Nama&lt;/th&gt;
+            </span></span><span class="line"><span class="cl">        &lt;th&gt;Umur&lt;/th&gt;
+            </span></span><span class="line"><span class="cl">        &lt;th&gt;Kota&lt;/th&gt;
+            </span></span><span class="line"><span class="cl">    &lt;/tr&gt;
+            </span></span><span class="line"><span class="cl">    &lt;tr&gt;
+            </span></span><span class="line"><span class="cl">        &lt;td&gt;Alice&lt;/td&gt;
+            </span></span><span class="line"><span class="cl">        &lt;td&gt;25&lt;/td&gt;
+            </span></span><span class="line"><span class="cl">        &lt;td&gt;Jakarta&lt;/td&gt;
+            </span></span><span class="line"><span class="cl">    &lt;/tr&gt;
+            </span></span><span class="line"><span class="cl">    &lt;tr&gt;
+            </span></span><span class="line"><span class="cl">        &lt;td&gt;Bob&lt;/td&gt;
+            </span></span><span class="line"><span class="cl">        &lt;td&gt;30&lt;/td&gt;
+            </span></span><span class="line"><span class="cl">        &lt;td&gt;Bandung&lt;/td&gt;
+            </span></span><span class="line"><span class="cl">    &lt;/tr&gt;
+            </span></span><span class="line"><span class="cl">&lt;/table&gt;
+            </span></span><span class="line"><span class="cl">
+            </span></span><span class="line"><span class="cl">&lt;/body&gt;
+            </span></span><span class="line"><span class="cl">&lt;/html&gt;
+            </span></span></code></pre>
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
                   </div>
+                  <h4 id="contoh-penggunaan-elemen-form">
+                    Contoh penggunaan elemen form
+                  </h4>
+                  <p>
+                    Berikut saya buatkan tampilan elemen Form jika dimasukan
+                    dalam HTML
+                  </p>
 
-                  <div
-                    class="text-gray-700 text-base tracking-wide leading-loose"
-                  >
-                    <p>
-                      Hallo kali ini saya menulis tutorial membuat tabel pada
-                      HTML. Sebelum ke tutorial, saya akan menjelaskan dulu apa
-                      itu tabel.
-                    </p>
-                    <h4 id="pengertian">Pengertian</h4>
-                    <p>
-                      Membuat tabel pada HTML adalah salah satu dasar yang
-                      penting dalam pembuatan halaman web. Tabel digunakan untuk
-                      menyajikan data dalam format yang terstruktur dan mudah
-                      dibaca. Berikut adalah tutorial lengkap tentang cara
-                      membuat tabel pada HTML.
-                    </p>
-                    <h4 id="pengertian">Struktur Dasar Tabel HTML</h4>
-                    <p>
-                      Tabel HTML dibuat menggunakan tag
-                      <code class="line-code">&lt;table&gt;</code> dan memiliki
-                      beberapa elemen penting:
-                    </p>
+                  <form action="#" method="post">
                     <ul class="list-disc pl-8">
                       <li>
-                        <code class="line-code">&lt;table&gt;</code>: Tag utama
-                        untuk membuat tabel.
+                        <!-- Input Teks -->
+                        <label for="text">Text Input:</label><br />
+                        <input type="text" id="text" name="text"
+                          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg px-4 py-2 mt-2" /><br />
                       </li>
                       <li>
-                        <code class="line-code">&lt;tr&gt;</code>: Tag untuk
-                        membuat baris dalam tabel.
+                        <!-- Input Kata Sandi -->
+                        <label for="password">Password:</label><br />
+                        <input type="password" id="password" name="password"
+                          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg px-4 py-2 mt-2" /><br />
                       </li>
                       <li>
-                        <code class="line-code">&lt;th&gt;</code>: Tag untuk
-                        membuat sel header dalam tabel, biasanya digunakan untuk
-                        judul kolom.
+                        <!-- Input Email -->
+                        <label for="email">Email:</label><br />
+                        <input type="email" id="email" name="email"
+                          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg px-4 py-2 mt-2" /><br />
                       </li>
                       <li>
-                        <code class="line-code">&lt;td&gt;</code>: Tag untuk
-                        membuat sel data dalam tabel.
+                        <!-- Input Nomor -->
+                        <label for="number">Number:</label><br />
+                        <input type="number" id="number" name="number"
+                          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg px-4 py-2 mt-2" /><br />
+                      </li>
+                      <li>
+                        <!-- Input Tanggal -->
+                        <label for="date">Date:</label><br />
+                        <input type="date" id="date" name="date"
+                          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg px-4 py-2 mt-2" /><br />
+                      </li>
+
+                      <li>
+                        <!-- Input File -->
+                        <label for="file">File:</label><br />
+                        <input type="file" id="file" name="file" /><br />
+                      </li>
+
+                      <li>
+                        <!-- Textarea -->
+                        <label for="textarea">Textarea:</label><br />
+                        <textarea id="textarea" name="textarea"
+                          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg px-4 py-2 mt-2"></textarea><br />
+                      </li>
+
+                      <li>
+                        <!-- Select -->
+                        <label>Option:</label><br />
+                        <select id="select" name="select">
+                          <option value="option1">Option 1</option>
+                          <option value="option2">Option 2</option>
+                          <option value="option3">Option 3</option>
+                        </select><br />
+                      </li>
+
+                      <li>
+                        <!-- Checkbox -->
+                        <label>Checkboxes:</label><br />
+                        <fieldset>
+                          <label for="checkbox1">
+                            <input type="checkbox" id="checkbox1" name="checkbox" value="checkbox1" />
+                            Checkbox 1 </label><br />
+                          <label for="checkbox2">
+                            <input type="checkbox" id="checkbox2" name="checkbox" value="checkbox2" />
+                            Checkbox 2 </label><br />
+                          <label for="checkbox3">
+                            <input type="checkbox" id="checkbox3" name="checkbox" value="checkbox3" />
+                            Checkbox 3 </label><br />
+                        </fieldset>
+                      </li>
+
+                      <li>
+                        <!-- Radio Button -->
+                        <label>Radio Buttons:</label><br />
+                        <fieldset>
+                          <label for="radio1">
+                            <input type="radio" id="radio1" name="radio" value="radio1" />
+                            Radio 1 </label><br />
+                          <label for="radio2">
+                            <input type="radio" id="radio2" name="radio" value="radio2" />
+                            Radio 2 </label><br />
+                          <label for="radio3">
+                            <input type="radio" id="radio3" name="radio" value="radio3" />
+                            Radio 3 </label><br />
+                        </fieldset>
+                      </li>
+
+                      <li>
+                        <!-- Tombol Submit -->
+                        <label>Submit button:</label><br />
+                        <button type="submit"
+                          class="transition duration-300 ease-out px-4 py-2 mt-2 text-sm text-center mx-auto md:mx-0 font-semibold rounded-lg bg-crayola md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gainsboro focus:bg-gainsboro focus:outline-none focus:shadow-outline">
+                          Submit
+                        </button>
                       </li>
                     </ul>
-
-                    <h4 id="contoh-code-penggunaan-elemen-form">
-                      Contoh code penggunaan elemen form
-                    </h4>
-                    <p>Berikut adalah contoh struktur dasar tabel HTML:</p>
-                    <div class="highlight">
-                      <div class="chroma">
-                        <table class="lntable">
-                          <tr>
-                            <td class="lntd">
-                              <pre
-                                tabindex="0"
-                                class="chroma"
-                              ><code><span class="lnt"> 1
-</span><span class="lnt"> 123123
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span><span class="lnt">34
-</span><span class="lnt">35
-</span><span class="lnt">36
-</span><span class="lnt">37
-</span><span class="lnt">38
-</span><span class="lnt">39
-</span><span class="lnt">40
-</span><span class="lnt">41
-</span><span class="lnt">42
-</span><span class="lnt">43
-</span><span class="lnt">44
-</span><span class="lnt">45
-</span><span class="lnt">46
-</span><span class="lnt">47
-</span><span class="lnt">48
-</span><span class="lnt">49
-</span><span class="lnt">50
-</span><span class="lnt">51
-</span><span class="lnt">52
-</span><span class="lnt">53
-</span><span class="lnt">54
-</span><span class="lnt">55
-</span><span class="lnt">56
-</span><span class="lnt">57
-</span></code></pre>
-                            </td>
-                            <td class="lntd">
-                              <pre
-                                tabindex="0"
-                                class="chroma"
-                              ><code class="language-html" data-lang="html"><span class="line"><span class="cl">&lt;form action=&quot;/submit&quot; method=&quot;post&quot;&gt;
-</span></span><span class="line"><span class="cl">    &lt;label for=&quot;text&quot;&gt;Text Input:&lt;/label&gt;&lt;br&gt;
-</span></span><span class="line"><span class="cl">    &lt;input type=&quot;text&quot; id=&quot;text&quot; name=&quot;text&quot;&gt;&lt;br&gt;&lt;br&gt;
-</span></span><span class="line"><span class="cl">    
-</span></span><span class="line"><span class="cl">    &lt;label for=&quot;password&quot;&gt;Password:&lt;/label&gt;&lt;br&gt;
-</span></span><span class="line"><span class="cl">    &lt;input type=&quot;password&quot; id=&quot;password&quot; name=&quot;password&quot;&gt;&lt;br&gt;&lt;br&gt;
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    &lt;label for=&quot;email&quot;&gt;Email:&lt;/label&gt;&lt;br&gt;
-</span></span><span class="line"><span class="cl">    &lt;input type=&quot;email&quot; id=&quot;email&quot; name=&quot;email&quot;&gt;&lt;br&gt;&lt;br&gt;
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    &lt;label for=&quot;number&quot;&gt;Number:&lt;/label&gt;&lt;br&gt;
-</span></span><span class="line"><span class="cl">    &lt;input type=&quot;number&quot; id=&quot;number&quot; name=&quot;number&quot;&gt;&lt;br&gt;&lt;br&gt;
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    &lt;label for=&quot;date&quot;&gt;Date:&lt;/label&gt;&lt;br&gt;
-</span></span><span class="line"><span class="cl">    &lt;input type=&quot;date&quot; id=&quot;date&quot; name=&quot;date&quot;&gt;&lt;br&gt;&lt;br&gt;
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    &lt;label for=&quot;file&quot;&gt;File:&lt;/label&gt;&lt;br&gt;
-</span></span><span class="line"><span class="cl">    &lt;input type=&quot;file&quot; id=&quot;file&quot; name=&quot;file&quot;&gt;&lt;br&gt;&lt;br&gt;
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    &lt;label for=&quot;textarea&quot;&gt;Textarea:&lt;/label&gt;&lt;br&gt;
-</span></span><span class="line"><span class="cl">    &lt;textarea id=&quot;textarea&quot; name=&quot;textarea&quot;&gt;&lt;/textarea&gt;&lt;br&gt;&lt;br&gt;
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    &lt;label for=&quot;select&quot;&gt;Select:&lt;/label&gt;&lt;br&gt;
-</span></span><span class="line"><span class="cl">    &lt;select id=&quot;select&quot; name=&quot;select&quot;&gt;
-</span></span><span class="line"><span class="cl">        &lt;option value=&quot;option1&quot;&gt;Option 1&lt;/option&gt;
-</span></span><span class="line"><span class="cl">        &lt;option value=&quot;option2&quot;&gt;Option 2&lt;/option&gt;
-</span></span><span class="line"><span class="cl">        &lt;option value=&quot;option3&quot;&gt;Option 3&lt;/option&gt;
-</span></span><span class="line"><span class="cl">    &lt;/select&gt;&lt;br&gt;&lt;br&gt;
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    &lt;fieldset&gt;
-</span></span><span class="line"><span class="cl">        &lt;legend&gt;Checkboxes&lt;/legend&gt;
-</span></span><span class="line"><span class="cl">        &lt;label for=&quot;checkbox1&quot;&gt;
-</span></span><span class="line"><span class="cl">            &lt;input type=&quot;checkbox&quot; id=&quot;checkbox1&quot; name=&quot;checkbox&quot; value=&quot;checkbox1&quot;&gt; Checkbox 1  
-</span></span><span class="line"><span class="cl">        &lt;/label&gt;&lt;br&gt;
-</span></span><span class="line"><span class="cl">        &lt;label for=&quot;checkbox2&quot;&gt;
-</span></span><span class="line"><span class="cl">            &lt;input type=&quot;checkbox&quot; id=&quot;checkbox2&quot; name=&quot;checkbox&quot; value=&quot;checkbox2&quot;&gt; Checkbox 2  
-</span></span><span class="line"><span class="cl">        &lt;/label&gt;&lt;br&gt;
-</span></span><span class="line"><span class="cl">        &lt;label for=&quot;checkbox3&quot;&gt;
-</span></span><span class="line"><span class="cl">            &lt;input type=&quot;checkbox&quot; id=&quot;checkbox3&quot; name=&quot;checkbox&quot; value=&quot;checkbox3&quot;&gt; Checkbox 3  
-</span></span><span class="line"><span class="cl">        &lt;/label&gt;&lt;br&gt;
-</span></span><span class="line"><span class="cl">    &lt;/fieldset&gt;&lt;br&gt;&lt;br&gt;
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    &lt;fieldset&gt;
-</span></span><span class="line"><span class="cl">        &lt;legend&gt;Radio Buttons&lt;/legend&gt;
-</span></span><span class="line"><span class="cl">        &lt;label for=&quot;radio1&quot;&gt;
-</span></span><span class="line"><span class="cl">            &lt;input type=&quot;radio&quot; id=&quot;radio1&quot; name=&quot;radio&quot; value=&quot;radio1&quot;&gt; Radio 1
-</span></span><span class="line"><span class="cl">        &lt;/label&gt;&lt;br&gt;
-</span></span><span class="line"><span class="cl">        &lt;label for=&quot;radio2&quot;&gt;
-</span></span><span class="line"><span class="cl">            &lt;input type=&quot;radio&quot; id=&quot;radio2&quot; name=&quot;radio&quot; value=&quot;radio2&quot;&gt; Radio 2
-</span></span><span class="line"><span class="cl">        &lt;/label&gt;&lt;br&gt;
-</span></span><span class="line"><span class="cl">        &lt;label for=&quot;radio3&quot;&gt;
-</span></span><span class="line"><span class="cl">            &lt;input type=&quot;radio&quot; id=&quot;radio3&quot; name=&quot;radio&quot; value=&quot;radio3&quot;&gt; Radio 3
-</span></span><span class="line"><span class="cl">        &lt;/label&gt;&lt;br&gt;
-</span></span><span class="line"><span class="cl">    &lt;/fieldset&gt;&lt;br&gt;&lt;br&gt;
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    &lt;button type=&quot;submit&quot;&gt;Submit&lt;/button&gt;
-</span></span><span class="line"><span class="cl">&lt;/form&gt;
-</span></span></code></pre>
-                            </td>
-                          </tr>
-                        </table>
-                      </div>
-                    </div>
-                    <h4 id="contoh-penggunaan-elemen-form">
-                      Contoh penggunaan elemen form
-                    </h4>
-                    <p>
-                      Berikut saya buatkan tampilan elemen Form jika dimasukan
-                      dalam HTML
-                    </p>
-
-                    <form action="#" method="post">
-                      <ul class="list-disc pl-8">
-                        <li>
-                          <!-- Input Teks -->
-                          <label for="text">Text Input:</label><br />
-                          <input
-                            type="text"
-                            id="text"
-                            name="text"
-                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg px-4 py-2 mt-2"
-                          /><br />
-                        </li>
-                        <li>
-                          <!-- Input Kata Sandi -->
-                          <label for="password">Password:</label><br />
-                          <input
-                            type="password"
-                            id="password"
-                            name="password"
-                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg px-4 py-2 mt-2"
-                          /><br />
-                        </li>
-                        <li>
-                          <!-- Input Email -->
-                          <label for="email">Email:</label><br />
-                          <input
-                            type="email"
-                            id="email"
-                            name="email"
-                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg px-4 py-2 mt-2"
-                          /><br />
-                        </li>
-                        <li>
-                          <!-- Input Nomor -->
-                          <label for="number">Number:</label><br />
-                          <input
-                            type="number"
-                            id="number"
-                            name="number"
-                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg px-4 py-2 mt-2"
-                          /><br />
-                        </li>
-                        <li>
-                          <!-- Input Tanggal -->
-                          <label for="date">Date:</label><br />
-                          <input
-                            type="date"
-                            id="date"
-                            name="date"
-                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg px-4 py-2 mt-2"
-                          /><br />
-                        </li>
-
-                        <li>
-                          <!-- Input File -->
-                          <label for="file">File:</label><br />
-                          <input type="file" id="file" name="file" /><br />
-                        </li>
-
-                        <li>
-                          <!-- Textarea -->
-                          <label for="textarea">Textarea:</label><br />
-                          <textarea
-                            id="textarea"
-                            name="textarea"
-                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg px-4 py-2 mt-2"
-                          ></textarea
-                          ><br />
-                        </li>
-
-                        <li>
-                          <!-- Select -->
-                          <label>Option:</label><br />
-                          <select id="select" name="select">
-                            <option value="option1">Option 1</option>
-                            <option value="option2">Option 2</option>
-                            <option value="option3">Option 3</option></select
-                          ><br />
-                        </li>
-
-                        <li>
-                          <!-- Checkbox -->
-                          <label>Checkboxes:</label><br />
-                          <fieldset>
-                            <label for="checkbox1">
-                              <input
-                                type="checkbox"
-                                id="checkbox1"
-                                name="checkbox"
-                                value="checkbox1"
-                              />
-                              Checkbox 1 </label
-                            ><br />
-                            <label for="checkbox2">
-                              <input
-                                type="checkbox"
-                                id="checkbox2"
-                                name="checkbox"
-                                value="checkbox2"
-                              />
-                              Checkbox 2 </label
-                            ><br />
-                            <label for="checkbox3">
-                              <input
-                                type="checkbox"
-                                id="checkbox3"
-                                name="checkbox"
-                                value="checkbox3"
-                              />
-                              Checkbox 3 </label
-                            ><br />
-                          </fieldset>
-                        </li>
-
-                        <li>
-                          <!-- Radio Button -->
-                          <label>Radio Buttons:</label><br />
-                          <fieldset>
-                            <label for="radio1">
-                              <input
-                                type="radio"
-                                id="radio1"
-                                name="radio"
-                                value="radio1"
-                              />
-                              Radio 1 </label
-                            ><br />
-                            <label for="radio2">
-                              <input
-                                type="radio"
-                                id="radio2"
-                                name="radio"
-                                value="radio2"
-                              />
-                              Radio 2 </label
-                            ><br />
-                            <label for="radio3">
-                              <input
-                                type="radio"
-                                id="radio3"
-                                name="radio"
-                                value="radio3"
-                              />
-                              Radio 3 </label
-                            ><br />
-                          </fieldset>
-                        </li>
-
-                        <li>
-                          <!-- Tombol Submit -->
-                          <label>Submit button:</label><br />
-                          <button
-                            type="submit"
-                            class="transition duration-300 ease-out px-4 py-2 mt-2 text-sm text-center mx-auto md:mx-0 font-semibold rounded-lg bg-crayola md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gainsboro focus:bg-gainsboro focus:outline-none focus:shadow-outline"
-                          >
-                            Submit
-                          </button>
-                        </li>
-                      </ul>
-                    </form>
-                  </div>
+                  </form>
                 </div>
-              </article>
-            </main>
-            <aside class="col-span-4 md:px-4 md:py-8">
-              <div
-                class="sticky top-16 bg-white md:rounded-2xl shadow-xl overflow-hidden mb-4 md:mb-0"
-              >
-                <div class="w-full">
-                  <div
-                    class="text-3xl font-bold text-left sm:text-2xl text-gray-900 p-4 border-b border-slate-300"
-                  >
-                    Latest Notes
-                  </div>
-                </div>
-
-                <a
-                  href="https://edu.lab.just-suke.my.id/notes/tutorial-membuat-form-pada-html/"
-                >
-                  <div
-                    class="transition duration-300 ease-out flex justify-between items-center gap-x-px hover:bg-slate-100 active:scale-95 active:rounded-xl transition-all p-4"
-                  >
-                    <div class="flex-none w-3/4">
-                      <h3 class="font-semibold text-lg mb-2 line-clamp-2">
-                        Tutorial Membuat Form pada HTML
-                      </h3>
-                      <p class="text-xs text-slate-700 line-clamp-1">
-                        August 4, 2024
-                      </p>
-                    </div>
-                    <img
-                      id="b89225034dd9891e0bb8a880acf3535f"
-                      class="w-1/4"
-                      src="/images/tutorial-membuat-form-pada-html/HTML5_Logo_512.png"
-                    />
-                  </div>
-                </a>
-
-                <a
-                  href="https://edu.lab.just-suke.my.id/notes/tutorial-membuat-tabel-pada-html/"
-                >
-                  <div
-                    class="transition duration-300 ease-out flex justify-between items-center gap-x-px hover:bg-slate-100 active:scale-95 active:rounded-xl transition-all p-4"
-                  >
-                    <div class="flex-none w-3/4">
-                      <h3 class="font-semibold text-lg mb-2 line-clamp-2">
-                        Tutorial Membuat Tabel pada HTML
-                      </h3>
-                      <p class="text-xs text-slate-700 line-clamp-1">
-                        August 4, 2024
-                      </p>
-                    </div>
-                    <img
-                      id="682444807affb397118b360f36fd6a94"
-                      class="w-1/4"
-                      src="/images/tutorial-membuat-tabel-pada-html/HTML5_Logo_512.png"
-                    />
-                  </div>
-                </a>
-
-                <a
-                  href="https://edu.lab.just-suke.my.id/notes/tutorial-menambahkan-audio-pada-html/"
-                >
-                  <div
-                    class="transition duration-300 ease-out flex justify-between items-center gap-x-px hover:bg-slate-100 active:scale-95 active:rounded-xl transition-all p-4"
-                  >
-                    <div class="flex-none w-3/4">
-                      <h3 class="font-semibold text-lg mb-2 line-clamp-2">
-                        Tutorial Menambahkan Audio pada HTML
-                      </h3>
-                      <p class="text-xs text-slate-700 line-clamp-1">
-                        August 4, 2024
-                      </p>
-                    </div>
-                    <img
-                      id="bfd1f4dcec3f00c0ae451d59b0485997"
-                      class="w-1/4"
-                      src="/images/tutorial-menambahkan-audio-pada-html/HTML5_Logo_512.png"
-                    />
-                  </div>
-                </a>
-
-                <a
-                  href="https://edu.lab.just-suke.my.id/notes/tutorial-menambahkan-video-pada-html/"
-                >
-                  <div
-                    class="transition duration-300 ease-out flex justify-between items-center gap-x-px hover:bg-slate-100 active:scale-95 active:rounded-xl transition-all p-4"
-                  >
-                    <div class="flex-none w-3/4">
-                      <h3 class="font-semibold text-lg mb-2 line-clamp-2">
-                        Tutorial Menambahkan Video pada HTML
-                      </h3>
-                      <p class="text-xs text-slate-700 line-clamp-1">
-                        August 4, 2024
-                      </p>
-                    </div>
-                    <img
-                      id="711398e7217f7c6ca78ba159f3793a65"
-                      class="w-1/4"
-                      src="/images/tutorial-menambahkan-audio-pada-html/HTML5_Logo_512.png"
-                    />
-                  </div>
-                </a>
-
-                <a
-                  href="https://edu.lab.just-suke.my.id/notes/integrate-openstack-with-ceph-rgw/"
-                >
-                  <div
-                    class="transition duration-300 ease-out flex justify-between items-center gap-x-px hover:bg-slate-100 active:scale-95 active:rounded-xl transition-all p-4"
-                  >
-                    <div class="flex-none w-3/4">
-                      <h3 class="font-semibold text-lg mb-2 line-clamp-2">
-                        Integrate Openstack With Ceph RGW
-                      </h3>
-                      <p class="text-xs text-slate-700 line-clamp-1">
-                        December 23, 2022
-                      </p>
-                    </div>
-                    <img
-                      id="ba9caf08b91c4eda50f2da945cceb84b"
-                      class="w-1/4"
-                      src="/images/integrate-swift-with-ceph-rgw/OpenStack-Logo-Mark.png"
-                    />
-                  </div>
-                </a>
               </div>
-            </aside>
-          </div>
+            </article>
+          </main>
+          <aside class="col-span-4 md:px-4 md:py-8">
+            <div class="sticky top-16 bg-white md:rounded-2xl shadow-xl overflow-hidden mb-4 md:mb-0">
+              <div class="w-full">
+                <div class="text-3xl font-bold text-left sm:text-2xl text-gray-900 p-4 border-b border-slate-300">
+                  Latest Notes
+                </div>
+              </div>
 
-          <div
-            id="modal"
-            class="hidden fixed top-0 left-0 z-[80] w-screen h-screen bg-black/70 flex justify-center items-center"
-          >
-            <a
-              class="fixed z-[90] top-6 right-8 text-white text-5xl font-bold"
-              href="javascript:void(0)"
-              onclick="closeModal()"
-              >&times;</a
-            >
+              <a href="https://edu.lab.just-suke.my.id/notes/tutorial-membuat-form-pada-html/">
+                <div
+                  class="transition duration-300 ease-out flex justify-between items-center gap-x-px hover:bg-slate-100 active:scale-95 active:rounded-xl transition-all p-4">
+                  <div class="flex-none w-3/4">
+                    <h3 class="font-semibold text-lg mb-2 line-clamp-2">
+                      Tutorial Membuat Form pada HTML
+                    </h3>
+                    <p class="text-xs text-slate-700 line-clamp-1">
+                      August 4, 2024
+                    </p>
+                  </div>
+                  <img id="b89225034dd9891e0bb8a880acf3535f" class="w-1/4"
+                    src="/images/tutorial-membuat-form-pada-html/HTML5_Logo_512.png" />
+                </div>
+              </a>
 
-            <img id="modal-img" class="max-w-full md:max-w-7xl object-cover" />
-          </div>
+              <a href="https://edu.lab.just-suke.my.id/notes/tutorial-membuat-tabel-pada-html/">
+                <div
+                  class="transition duration-300 ease-out flex justify-between items-center gap-x-px hover:bg-slate-100 active:scale-95 active:rounded-xl transition-all p-4">
+                  <div class="flex-none w-3/4">
+                    <h3 class="font-semibold text-lg mb-2 line-clamp-2">
+                      Tutorial Membuat Tabel pada HTML
+                    </h3>
+                    <p class="text-xs text-slate-700 line-clamp-1">
+                      August 4, 2024
+                    </p>
+                  </div>
+                  <img id="682444807affb397118b360f36fd6a94" class="w-1/4"
+                    src="/images/tutorial-membuat-tabel-pada-html/HTML5_Logo_512.png" />
+                </div>
+              </a>
+
+              <a href="https://edu.lab.just-suke.my.id/notes/tutorial-menambahkan-audio-pada-html/">
+                <div
+                  class="transition duration-300 ease-out flex justify-between items-center gap-x-px hover:bg-slate-100 active:scale-95 active:rounded-xl transition-all p-4">
+                  <div class="flex-none w-3/4">
+                    <h3 class="font-semibold text-lg mb-2 line-clamp-2">
+                      Tutorial Menambahkan Audio pada HTML
+                    </h3>
+                    <p class="text-xs text-slate-700 line-clamp-1">
+                      August 4, 2024
+                    </p>
+                  </div>
+                  <img id="bfd1f4dcec3f00c0ae451d59b0485997" class="w-1/4"
+                    src="/images/tutorial-menambahkan-audio-pada-html/HTML5_Logo_512.png" />
+                </div>
+              </a>
+
+              <a href="https://edu.lab.just-suke.my.id/notes/tutorial-menambahkan-video-pada-html/">
+                <div
+                  class="transition duration-300 ease-out flex justify-between items-center gap-x-px hover:bg-slate-100 active:scale-95 active:rounded-xl transition-all p-4">
+                  <div class="flex-none w-3/4">
+                    <h3 class="font-semibold text-lg mb-2 line-clamp-2">
+                      Tutorial Menambahkan Video pada HTML
+                    </h3>
+                    <p class="text-xs text-slate-700 line-clamp-1">
+                      August 4, 2024
+                    </p>
+                  </div>
+                  <img id="711398e7217f7c6ca78ba159f3793a65" class="w-1/4"
+                    src="/images/tutorial-menambahkan-audio-pada-html/HTML5_Logo_512.png" />
+                </div>
+              </a>
+
+              <a href="https://edu.lab.just-suke.my.id/notes/integrate-openstack-with-ceph-rgw/">
+                <div
+                  class="transition duration-300 ease-out flex justify-between items-center gap-x-px hover:bg-slate-100 active:scale-95 active:rounded-xl transition-all p-4">
+                  <div class="flex-none w-3/4">
+                    <h3 class="font-semibold text-lg mb-2 line-clamp-2">
+                      Integrate Openstack With Ceph RGW
+                    </h3>
+                    <p class="text-xs text-slate-700 line-clamp-1">
+                      December 23, 2022
+                    </p>
+                  </div>
+                  <img id="ba9caf08b91c4eda50f2da945cceb84b" class="w-1/4"
+                    src="/images/integrate-swift-with-ceph-rgw/OpenStack-Logo-Mark.png" />
+                </div>
+              </a>
+            </div>
+          </aside>
         </div>
-      </main>
-    </div>
-    <section class="text-gray-900 bg-crayola">
-      <div
-        class="max-w-screen-xl px-4 py-12 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8"
-      >
-        <nav class="flex flex-wrap justify-center -mx-5 -my-2">
-          <div class="px-5 py-2">
-            <a href="/" class="leading-6 text-sm font-semibold"> Home </a>
-          </div>
-          <div class="px-5 py-2">
-            <a href="/notes" class="leading-6 text-sm font-semibold"> Notes </a>
-          </div>
-          <div class="px-5 py-2">
-            <a href="/about" class="leading-6 text-sm font-semibold"> About </a>
-          </div>
-        </nav>
-        <p class="mt-8 text-base leading-6 text-center">
-          © 2024 Education with Robi and Hardi · Made with ❤️ by Us
-        </p>
+
+        <div id="modal"
+          class="hidden fixed top-0 left-0 z-[80] w-screen h-screen bg-black/70 flex justify-center items-center">
+          <a class="fixed z-[90] top-6 right-8 text-white text-5xl font-bold" href="javascript:void(0)"
+            onclick="closeModal()">&times;</a>
+
+          <img id="modal-img" class="max-w-full md:max-w-7xl object-cover" />
+        </div>
       </div>
-    </section>
-    <script
-      src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"
-      defer
-    ></script>
+    </main>
+  </div>
+  <section class="text-gray-900 bg-crayola">
+    <div class="max-w-screen-xl px-4 py-12 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8">
+      <nav class="flex flex-wrap justify-center -mx-5 -my-2">
+        <div class="px-5 py-2">
+          <a href="/" class="leading-6 text-sm font-semibold"> Home </a>
+        </div>
+        <div class="px-5 py-2">
+          <a href="/notes" class="leading-6 text-sm font-semibold"> Notes </a>
+        </div>
+        <div class="px-5 py-2">
+          <a href="/about" class="leading-6 text-sm font-semibold"> About </a>
+        </div>
+      </nav>
+      <p class="mt-8 text-base leading-6 text-center">
+        © 2024 Education with Robi and Hardi · Made with ❤️ by Us
+      </p>
+    </div>
+  </section>
+  <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 
-    <script
-      src="https://edu.lab.just-suke.my.id/js/main.min.5aeb0a578a764d9b9585be170626955aeb4f367cb307f699a75ddbe6383c71e4.js"
-      integrity="sha256-WusKV4p2TZuVhb4XBiaVWutPNnyzB/aZp13b5jg8ceQ="
-      defer
-    ></script>
-    <script
-      type="module"
-      src="https://edu.lab.just-suke.my.id/js/module.js"
-      integrity=""
-      defer
-    ></script>
+  <script
+    src="https://edu.lab.just-suke.my.id/js/main.min.5aeb0a578a764d9b9585be170626955aeb4f367cb307f699a75ddbe6383c71e4.js"
+    integrity="sha256-WusKV4p2TZuVhb4XBiaVWutPNnyzB/aZp13b5jg8ceQ=" defer></script>
+  <script type="module" src="https://edu.lab.just-suke.my.id/js/module.js" integrity="" defer></script>
 
-    <script>
-      var modal = document.getElementById("modal");
+  <script>
+    var modal = document.getElementById("modal");
 
-      var modalImg = document.getElementById("modal-img");
+    var modalImg = document.getElementById("modal-img");
 
-      function showModal(src) {
-        modal.classList.remove("hidden");
-        modalImg.src = src;
-      }
+    function showModal(src) {
+      modal.classList.remove("hidden");
+      modalImg.src = src;
+    }
 
-      function closeModal() {
-        modal.classList.add("hidden");
-      }
-    </script>
-  </body>
+    function closeModal() {
+      modal.classList.add("hidden");
+    }
+  </script>
+</body>
+
 </html>
