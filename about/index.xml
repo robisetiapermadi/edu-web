@@ -2,9 +2,9 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>About on Education with Robi and Hardi</title>
-    <link>https://edu.lab.just-suke.my.id/about/</link>
+    <link>https://edu.just-suke.my.id/about/</link>
     <description>Recent content in About on Education with Robi and Hardi</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://edu.lab.just-suke.my.id/about/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="https://edu.just-suke.my.id/about/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
